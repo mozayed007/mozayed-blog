@@ -1,5 +1,5 @@
 ---
-title: "<% tp.file.title %>"
+title: "First Blog"
 draft: false
 tags: 
 ---

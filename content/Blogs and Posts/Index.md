@@ -1,10 +1,11 @@
 ---
 longform:
   format: scenes
-  title: MoZayed Blog
+  title: Blogs and Posts
   workflow: Default Workflow
   sceneFolder: /
-  scenes: []
+  scenes:
+    - First Blog
   sceneTemplate: templates/page.md
   ignoredFiles: []
 ---

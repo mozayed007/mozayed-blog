@@ -3,7 +3,7 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: " MoZayed 😎 ",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -61,7 +61,7 @@ const config: QuartzConfig = {
         },
         // set this to 'true' to use the background color of the Shikiji theme
         // if set to 'false', will use Quartz theme colors for background
-        keepBackground: false,
+        keepBackground: true,
       }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
