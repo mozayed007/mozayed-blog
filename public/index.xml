@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title> MoZayed 😎 </title>
+      <link>https://mozayed007.github.io/mozayed-blog</link>
+      <description>Last 10 notes on  MoZayed 😎 </description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Spectrograms</title>
+    <link>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/Spectrograms</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/Spectrograms</guid>
+    <description>The Spectrogram and The Gabor Transform Summary The Gabor transform is used to compute the spectrogram, which shows the frequency content and temporal information of a signal.</description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item><item>
+    <title>Transformer</title>
+    <link>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/NLP/Transformers</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/NLP/Transformers</guid>
+    <description>Attention Is All You Need-Transformer Model A Transformer is an encoder-decoder model architecture that uses the attention mechanism. Massive advantage over RNN based encoder-decoder architecture since it allows to: Benefiting from the GPU/TPU parallelization.</description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item><item>
+    <title>NLP</title>
+    <link>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/NLP/</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/NLP/</guid>
+    <description></description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item><item>
+    <title>Study Notes</title>
+    <link>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/</guid>
+    <description></description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item><item>
+    <title>Computer Vision</title>
+    <link>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/Computer-Vision/</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/resources/Study-Notes/Computer-Vision/</guid>
+    <description></description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item><item>
+    <title>Resources</title>
+    <link>https://mozayed007.github.io/mozayed-blog/resources/</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/resources/</guid>
+    <description>Study Notes, Guides, Tutorials.</description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item><item>
+    <title>Side Projects</title>
+    <link>https://mozayed007.github.io/mozayed-blog/projects/</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/projects/</guid>
+    <description></description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item><item>
+    <title>Dataset Overview</title>
+    <link>https://mozayed007.github.io/mozayed-blog/projects/Image-Classifier-AWS/Data-Overview</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/projects/Image-Classifier-AWS/Data-Overview</guid>
+    <description>Flowers 102 Dataset Overview Introduction The Flowers 102 dataset is a consistent set of images representing 102 different categories of flowers common to the UK.</description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item><item>
+    <title>Recommendation Plan</title>
+    <link>https://mozayed007.github.io/mozayed-blog/projects/Anime-Recommender/Recommendation-Algorithm</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/projects/Anime-Recommender/Recommendation-Algorithm</guid>
+    <description>Anime Recommendation Algorithm This document outlines the design of an anime recommendation algorithm that leverages semantic similarity and content-based filtering.</description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item><item>
+    <title>Language model role</title>
+    <link>https://mozayed007.github.io/mozayed-blog/projects/Anime-Recommender/language-model</link>
+    <guid>https://mozayed007.github.io/mozayed-blog/projects/Anime-Recommender/language-model</guid>
+    <description>language_model.py The language_model.py file is responsible for all operations related to the language model. This includes loading the model and computing embeddings for text.</description>
+    <pubDate>Sat, 09 Mar 2024 19:48:36 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
