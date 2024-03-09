@@ -11,7 +11,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "mozayed007.github.io/mozayed-blog",
-    ignorePatterns: ["private", "templates", ".obsidian","Attachments"],
+    ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
       cdnCaching: true,
