@@ -5,7 +5,6 @@ tags:
   - Frequency-Time
   - Study-Notes
 ---
-
 # The Spectrogram and The Gabor Transform
 
 ## Summary
