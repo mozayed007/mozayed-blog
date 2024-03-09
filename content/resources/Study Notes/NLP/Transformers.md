@@ -8,14 +8,13 @@ tags:
   - Study-Notes
 ---
 
-
 # Attention Is All You Need-Transformer
 
 ---
 
 ## Model
 
-![[../../../Attachments/TransformerModel.png]]
+![[Attachments/TransformerModel.png]]
 
 - A Transformer is an encoder-decoder model architecture that uses the attention mechanism.
 - Massive advantage over RNN based encoder-decoder architecture since it allows to:

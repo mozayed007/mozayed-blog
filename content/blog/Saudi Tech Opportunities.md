@@ -27,8 +27,7 @@ Saudi Arabia is emerging as a hub for technology and innovation, akin to the fam
 3. **ServiceNow Data-center**: ServiceNow’s data center infrastructure supports critical business processes.
 4. **Data-volt Sustainable Data-center**: A sustainable data center solution, emphasizing energy efficiency and environmental responsibility.
 
-   - ![[../Attachments/GH0PeOqXMAAR2mP.jpeg]]
-
+	![[Attachments/GH0PeOqXMAAR2mP.jpeg]]
 ### Aramco's Innovations
 
 - SAIL:
@@ -50,8 +49,8 @@ Saudi Arabia is emerging as a hub for technology and innovation, akin to the fam
   3. **FundSwift**: Providing bridge financing for startups, accelerating early-stage startup growth through swift financing! 📈
   4. **Transform+**: Designed to bridge the technology gap for startups to adapt to the cloud! ☁️
   5. **SourceTech**: Incentivizing IT outsourcing firms to establish themselves within Saudi Arabia! 🏗️
-  - These are the 5 different products that NTDP officially announced at #LEAP24.
-  - ![[../Attachments/GH5bZgxXoAAExxW.jpeg]]
+  - These are the 5 different products that NTDP officially announced at #LEAP24.0
+	  ![[Attachments/GH5bZgxXoAAExxW.jpeg]]
 
 ## In-Demand Tech Roles in Saudi Arabia
 
