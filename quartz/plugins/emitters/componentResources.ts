@@ -120,11 +120,20 @@ function addGlobalPageResources(
   } else if (cfg.analytics?.provider === "umami") {
     componentResources.afterDOMLoaded.push(`
       const umamiScript = document.createElement("script")
-      umamiScript.src = "${cfg.analytics.host}" ?? "https://analytics.umami.is/script.js"
+      umamiScript.src = "${cfg.analytics.host ?? "https://analytics.umami.is"}/script.js"
       umamiScript.setAttribute("data-website-id", "${cfg.analytics.websiteId}")
       umamiScript.async = true
 
       document.head.appendChild(umamiScript)
+    `)
+  } else if (cfg.analytics?.provider === "goatcounter") {
+    componentResources.afterDOMLoaded.push(`
+      const goatcounterScript = document.createElement("script")
+      goatcounterScript.src = "${cfg.analytics.scriptSrc ?? "https://gc.zgo.at/count.js"}"
+      goatcounterScript.async = true
+      goatcounterScript.setAttribute("data-goatcounter",
+        "https://${cfg.analytics.websiteId}.${cfg.analytics.host ?? "goatcounter.com"}/count")
+      document.head.appendChild(goatcounterScript)
     `)
   }
 
@@ -219,7 +228,7 @@ export const ComponentResources: QuartzEmitterPlugin<Options> = (opts?: Partial<
 
             googleFontsStyleSheet = googleFontsStyleSheet.replace(
               url,
-              `/static/fonts/${filename}.ttf`,
+              `https://${cfg.baseUrl}/static/fonts/${filename}.ttf`,
             )
 
             promises.push(
