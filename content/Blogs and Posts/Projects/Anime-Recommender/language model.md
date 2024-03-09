@@ -1,4 +1,12 @@
-#project #nlp #embeddings #recommender #LLM #content-based_filtering #llama_index
+---
+title: Language model role
+draft: false
+tags:
+  - NLP
+  - project
+  - recommender
+  - content-based-filtering
+---
 # language_model.py
 
 The `language_model.py` file is responsible for all operations related to the language model. This includes loading the model and computing embeddings for text.

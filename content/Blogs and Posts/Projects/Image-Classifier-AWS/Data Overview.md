@@ -1,6 +1,20 @@
-#computer_vision #transfer_learning #image_classification #Dataset #flowers
-# Flowers 102 Dataset Overview
 ---
+title: Dataset Overview
+draft: false
+tags:
+  - computer-vision
+  - project
+  - recommender
+  - content-based-filtering
+  - transfer-learning
+  - image-classification
+  - flowers
+  - Dataset
+---
+# Flowers 102 Dataset Overview
+
+---
+
 ## Introduction
 
 The Flowers 102 dataset is a consistent set of images representing 102 different categories of flowers common to the UK. This dataset is often used for image classification tasks and research.
@@ -32,6 +46,5 @@ This dataset is commonly used for image classification tasks, particularly for f
 
 You can find more information about the Flowers 102 Dataset on the official webpage hosted by the ([Visual Geometry Group - University of Oxford](https://www.robots.ox.ac.uk/~vgg/data/flowers/102/)). The page provides an overview of the dataset, including details about the categories and the number of images for each class. It also offers downloads for the dataset images, image segmentations, image labels, and data splits.
 
-Additionally, you can find more resources and benchmarks related to the Flowers 102 Dataset on 
-([ Papers With Code](https://paperswithcode.com/dataset/oxford-102-flower)),  ([ TensorFlow Datasets](https://www.tensorflow.org/datasets/catalog/oxford_flowers102)), and ([Kaggle](https://www.kaggle.com/datasets/lenine/flower-102diffspecies-dataset)).
-
+Additionally, you can find more resources and benchmarks related to the Flowers 102 Dataset on
+([Papers With Code](https://paperswithcode.com/dataset/oxford-102-flower)),  ([TensorFlow Datasets](https://www.tensorflow.org/datasets/catalog/oxford_flowers102)), and ([Kaggle](https://www.kaggle.com/datasets/lenine/flower-102diffspecies-dataset)).

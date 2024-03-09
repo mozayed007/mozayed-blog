@@ -1,37 +1,58 @@
-#LEAP24 #Tech #Opportunities 
+---
+title: Emerging Opportunities - Saudi Arabia
+draft: false
+tags:
+  - LEAP24
+  - Tech
+  - Opportunities
+---
+
 # LEAP24: Tech Opportunities in Saudi Arabia – The New Silicon Valley
 
--  **There are multiple opportunities that are rising talents dreaming to kick start their journey in Tech.** 
-- In this summary, I'm focusing on the opportunities that might interest early birds like me who are looking for opportunities to start their careers and what a perspective for needed talents could be. 
+---
+
+- **There are multiple opportunities that are rising talents dreaming to kick start their journey in Tech.**
+- In this summary, I'm focusing on the opportunities that might interest early birds like me who are looking for opportunities to start their careers and what a perspective for needed talents could be.
+
 ## Introduction
 
 Saudi Arabia is emerging as a hub for technology and innovation, akin to the famed Silicon Valley. LEAP 2024, a digital Davos, brings together global tech enthusiasts, change-makers, and visionaries. Here’s a concise summary of the event, focusing on Day 1 and Day 2.
-## Day 1 -  Unveiling Cloud Service Providers and Data Centers:
-### Cloud Service Providers:
+
+## Day 1 -  Unveiling Cloud Service Providers and Data Centers
+
+### Cloud Service Providers
+
 1. **AWS SA Region**: Amazon Web Services (AWS) continues to expand its presence in Saudi Arabia, offering scalable cloud solutions.
 2. **IBM Software Lab**: IBM’s cutting-edge software lab provides a platform for innovation and collaboration.
 3. **ServiceNow Data-center**: ServiceNow’s data center infrastructure supports critical business processes.
 4. **Data-volt Sustainable Data-center**: A sustainable data center solution, emphasizing energy efficiency and environmental responsibility.
-- ![[GH0PeOqXMAAR2mP.jpeg]]
-### Aramco's Innovations:
+
+![[/Blogs-and-Posts/Attachments/GH0PeOqXMAAR2mP.jpeg]]
+
+### Aramco's Innovations
+
 - SAIL:
-	- **SAIL (Saudi Accelerated Innovation Lab)**: Aramco’s lab fosters rapid innovation, bridging the gap between research and practical applications.
-	- **ARAMCO METABRAIN (Industrial LLM)**: Leveraging machine learning and AI, Aramco aims to enhance industrial processes.
+  - **SAIL (Saudi Accelerated Innovation Lab)**: Aramco’s lab fosters rapid innovation, bridging the gap between research and practical applications.
+  - **ARAMCO METABRAIN (Industrial LLM)**: Leveraging machine learning and AI, Aramco aims to enhance industrial processes.
+
 ## Day 2 - NTDP’s Vision for Startups
-###  NTDP (Next Technology Development Program):
--  They unveiled five groundbreaking products, collaborating with key entities:
-	- SDAIA
-	- MCIT
-	- KAUST
--  Products
-	- They Focus on AI & Cloud to boost startups as a main vision:
-		1. **Fuel**: Designed to support VC funds investing in deep tech and emerging tech! 👏
-		2. **AIM (Artificial Intelligence Mission)**: An AI innovation platform providing access to R&D infrastructure and development. 🦾
-		3. **FundSwift**: Providing bridge financing for startups, accelerating early-stage startup growth through swift financing! 📈
-		4. **Transform+**: Designed to bridge the technology gap for startups to adapt to the cloud! ☁️
-		5. **SourceTech**: Incentivizing IT outsourcing firms to establish themselves within Saudi Arabia! 🏗️
-		- These are the 5 different products that NTDP officially announced at #LEAP24.
-		- ![[GH5bZgxXoAAExxW.jpeg]]
+
+### NTDP (Next Technology Development Program)
+
+- They unveiled five groundbreaking products, collaborating with key entities:
+  - SDAIA
+  - MCIT
+  - KAUST
+- Products
+  - They Focus on AI & Cloud to boost startups as a main vision:
+  1. **Fuel**: Designed to support VC funds investing in deep tech and emerging tech! 👏
+  2. **AIM (Artificial Intelligence Mission)**: An AI innovation platform providing access to R&D infrastructure and development. 🦾
+  3. **FundSwift**: Providing bridge financing for startups, accelerating early-stage startup growth through swift financing! 📈
+  4. **Transform+**: Designed to bridge the technology gap for startups to adapt to the cloud! ☁️
+  5. **SourceTech**: Incentivizing IT outsourcing firms to establish themselves within Saudi Arabia! 🏗️
+  - These are the 5 different products that NTDP officially announced at #LEAP24.
+  - ![[/Blogs-and-Posts/Attachments/GH5bZgxXoAAExxW.jpeg]]
+
 ## In-Demand Tech Roles in Saudi Arabia
 
 As Saudi Arabia positions itself as the new Silicon Valley, several tech roles are expected to be in high demand. Whether you’re an early-career talent or an experienced professional, consider exploring these opportunities as an example list with hints from the LEAP summary:
@@ -59,6 +80,7 @@ As Saudi Arabia positions itself as the new Silicon Valley, several tech roles a
 -  **Cybersecurity Engineer**: Focusing on network security infrastructure and threat monitoring.
 - **Full-Stack Developer**: Gaining experience in both front-end and back-end development.
 - **IT Specialist**: Participating in real-world projects and learning from experienced professionals.
-## Conclusion
-- These announcements at #LEAP24 signify Saudi Arabia’s commitment to fostering tech talent, innovation, and global collaboration. Stay tuned for more exciting developments! 🚀
 
+## Conclusion
+
+- These announcements at #LEAP24 signify Saudi Arabia’s commitment to fostering tech talent, innovation, and global collaboration. Stay tuned for more exciting developments! 🚀

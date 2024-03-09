@@ -1,4 +1,13 @@
-#project #nlp #recommender #content-based_filtering
+---
+title: General Plan
+draft: false
+tags:
+  - NLP
+  - project
+  - recommender
+  - content-based-filtering
+---
+
 For my use case, I would recommend using **LlamaIndex**. Here's why:
 
 1. **Semantic Similarity**: LlamaIndex is designed to work with Language Models, which are excellent at understanding semantic similarity. You can use it to index your anime descriptions and then retrieve similar animes based on the semantic similarity of their descriptions.

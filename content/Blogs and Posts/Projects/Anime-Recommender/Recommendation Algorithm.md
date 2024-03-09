@@ -1,4 +1,11 @@
-
+---
+title: Recommendation Plan
+draft: false
+tags:
+  - NLP
+  - project
+  - recommender
+  - content-based-filtering
 ---
 
 # Anime Recommendation Algorithm
