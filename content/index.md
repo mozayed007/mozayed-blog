@@ -9,7 +9,8 @@ title: Welcome to My Space
 - 👀 I’m interested in: AI, Machine Learning, Cybersecurity, and Strategic Development Techs (Gartner).
 - 🏓 Hobbies: Anime, MMORPGs, TFT, FPS 🎮.
 - 🌱 I’m currently learning: Machine Learning, AI, NLP, CV, and (Cybersecurity (self study)).
-- 🛠 I've experience in Technical Support, Freelancing, Online Tutoring, Machine / Deep Learning, NLP, Computer Vision and LLMs.
+- 🛠 I've experience in Freelancing, Online Tutoring (Bachelors and Masters Students), ML/DL, NLP and LLMs, Computer Vision.
+- 🧠 Interested in Domain-Specialized AI development, I want to merge domain knowledge within AI Architectures to develop optimized and efficient AI solutions that won't cost thousands of households electricity usage.
 - 🏫 Senior CIE Undergraduate at UST Zewail City.
 
 ## 📚 Blog Posts
