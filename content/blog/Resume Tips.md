@@ -1,9 +1,10 @@
 ---
 title: Resume Tips
 draft: false
-tags:
-  - Resume
+tags:   
+  - Career
   - Tips
+  - Resume
 ---
 
 # Zero Experience Resume Tips From a Big Tech Hiring Manager

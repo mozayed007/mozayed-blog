@@ -1,7 +1,9 @@
 ---
 title: Emerging Opportunities - Saudi Arabia
 draft: false
-tags:
+tags:   
+  - Career
+  - Tips
   - LEAP24
   - Tech
   - Opportunities
