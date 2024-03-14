@@ -6,7 +6,7 @@ title: Welcome to My Space
 
 ## 👨‍💻 About Me
 
-- Geek, Gamer, Anime Appreciator, A cat guy 🐱 sorry dogs, A big brother of the greatest 3 siblings in the world, and the eldest son of my parents whom I'm grateful for, It's all about family to be honest. more on [[about| About Me]].
+- Geek, Gamer, Anime Appreciator, A cat guy 🐱 sorry dogs. more on [[about| About Me]].
 ## 📚 Blog Posts
 
 Here you'll find a collection of my [[blog/index|Thoughts]], [[projects/index|Experiences]], and [[resources/Study Notes/index|Learning]]. 
