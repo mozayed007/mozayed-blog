@@ -7,3 +7,4 @@ tags:
   - Study
   - Notes
 ---
+## This is where my nerdy stuff stays.

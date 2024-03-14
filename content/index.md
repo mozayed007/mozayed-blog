@@ -6,16 +6,11 @@ title: Welcome to My Space
 
 ## 👨‍💻 About Me
 
-- 👀 I’m interested in: AI, Machine Learning, Cybersecurity, and Strategic Development Techs (Gartner).
-- 🏓 Hobbies: Anime, MMORPGs, TFT, FPS 🎮.
-- 🌱 I’m currently learning: Machine Learning, AI, NLP, CV, and (Cybersecurity (self study)).
-- 🛠 I've experience in Freelancing, Online Tutoring (Bachelors and Masters Students), ML/DL, NLP and LLMs, Computer Vision.
-- 🧠 Interested in Domain-Specialized AI development, I want to merge domain knowledge within AI Architectures to develop optimized and efficient AI solutions that won't cost thousands of households electricity usage.
-- 🏫 Senior CIE Undergraduate at UST Zewail City.
-
+- Geek, Gamer, Anime Appreciator, A cat guy 🐱 sorry dogs, A big brother of the greatest 3 siblings in the world, and the eldest son of my parents whom I'm grateful for, It's all about family to be honest. more on [[about| About Me]].
 ## 📚 Blog Posts
 
-Here you'll find a collection of my thoughts, experiences, and learnings. I write about everything I take notes about whether experiences I meet or content I learn from regarding tech, and occasionally about my hobbies and interests.
+Here you'll find a collection of my [[blog/index|Thoughts]], [[projects/index|Experiences]], and [[resources/Study Notes/index|Learning]]. 
+I write about everything I take notes about whether experiences I gain throughout my life journey or content I learn from regarding tech, and occasionally about my hobbies and interests.
 
 ## 📫 Contact Me
 

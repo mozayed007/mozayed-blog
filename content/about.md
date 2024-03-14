@@ -6,8 +6,11 @@ tags:
   - About
 ---
 
-**<h1 align="left">Hi, I’m  Mohamed Zayed Ahmed <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" align="center" width="40" height =" 40"></h1>**
-<p align="center"><img src="https://media3.giphy.com/media/f6hnhHkks8bk4jwjh3/giphy.gif?cid=6c09b952a8e228564cf075141862157a36423c7e667945cc&rid=giphy.gif&ct=s" width="200"/></p>
+
+# **ヾ(￣ ▽ ￣)**
+ 
+  ![Typing SVG](https://readme-typing-svg.demolab.com?font=IBM+Plex+Mono&weight=600&pause=1000&random=true&width=435&lines=+Hi+there!+I'm+MoZayed+%F0%9F%91%8B.)                              
+<p align="center"><img src="https://media3.giphy.com/media/f6hnhHkks8bk4jwjh3/giphy.gif?cid=6c09b952a8e228564cf075141862157a36423c7e667945cc&rid=giphy.gif&ct=s" width="150"/></p>
 
 <div id="badges">
 <p align="center">
@@ -23,10 +26,20 @@ tags:
 
 ### 😼 | About Me
 
-- 👀 I’m interested in: AI, Machine Learning, Cybersecurity, and Strategic Development Techs (Gartner).
-- 🏓 Hobbies: Anime, MMORPGs, TFT,  FPS 🎮.
-- 🌱 I’m currently learning: Machine Learning, AI, NLP, CV, and Cybersecurity.
-- 🛠  I've experience in Technical Support, Freelancing,  Online Tutoring, Machine / Deep Learning, NLP, and LLMs.
+- 🏓 Hobbies:
+	-  Reading Research Papers, / Watching Podcasts and Interviews.
+	-  Blogging / Writing Notes on Obsidian on my Hidden Vault. 🥷🏻
+	- Anime, MMORPGs, TFT,  FPS 🎮.
+	  
+- 🌱 I’m currently learning: Machine Learning, AI, NLP, CV, and (Cybersecurity ( ***self-study*** ) ).
+  
+- 🛠  I've experience in Freelancing,  Online Tutoring, Machine/Deep Learning, NLP, and LLMs.
+  
+- 🧑🏻‍💻Currently missing with **Adapters** Checking LoRA, QLoRA,  Punica Multi-Tenant LoRA, experimenting Adapters customizations.  ( I think [LoRAx](https://predibase.com/) will be the next big thing)
+	  
+ - 🧠 Interested in Domain-Specialized AI development:
+	 - I want to merge domain knowledge within AI Architectures to develop optimized and efficient AI solutions that won't cost thousands of households electricity usage.
+	   
 - 🏫  Senior CIE Undergraduate at UST Zewail City.
 
 ---
@@ -62,7 +75,7 @@ tags:
 ---
 
 ### 🔥|  My Stats
-
+	
 <p align="center">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mozayed007&hide_border=true&theme=tokyonight" alt="Top Languages" width="24%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=mozayed007&hide_border=true&theme=tokyo-night" width="66%">
@@ -92,9 +105,10 @@ tags:
 
 ---
 
-### 😎| Badges <img src = "https://media.giphy.com/media/3orifgYbnsq43eFsdO/giphy.gif" align="center" width="40" height ="30">
+### 😎| Badges 
 
-#### My Holopin Badges
+
+#### My Holopin Badges | <img src = "https://media.giphy.com/media/3orifgYbnsq43eFsdO/giphy.gif" align="center" width="40" height ="30">
 
 [![An image of @mozayed007's Holopin badges](https://holopin.me/mozayed007)](https://holopin.me/mozayed007)
 
