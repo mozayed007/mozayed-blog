@@ -3,7 +3,6 @@ title: Welcome to My Space
 date: <% tp.file.creation_date() %>
 ---
 
-# Welcome to MoZayed's Blog
 
 ## Check out posts
 
