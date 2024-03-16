@@ -8,7 +8,7 @@ tags:
   - utility
   - ad
   - browser
-date: <% tp.file.creation_date() %>
+date: 2024-03-16 23:34
 ---
 # SponsorBlock: A Professional Guide
 

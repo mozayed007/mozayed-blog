@@ -9,7 +9,7 @@ tags:
   - data_science
   - template
   - project
-date: <% tp.file.creation_date() %>
+date: 2024-03-16 23:34
 ---
 - # Data Science Project Template Guide
 

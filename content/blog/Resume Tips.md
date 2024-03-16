@@ -5,7 +5,7 @@ tags:
   - Career
   - Tips
   - Resume
-date: <% tp.file.creation_date() %>
+date: 2024-03-16 23:34
 ---
 
 # Zero Experience Resume Tips From a Big Tech Hiring Manager

@@ -7,7 +7,7 @@ tags:
   - productivity
   - utility
   - browser
-date: <% tp.file.creation_date() %>
+date: 2024-03-16 23:34
 ---
 # Toby Browser Extension: A Professional Guide
 

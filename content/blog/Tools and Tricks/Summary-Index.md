@@ -6,7 +6,7 @@ tags:
   - apps
   - productivity
   - utility
-date: <% tp.file.creation_date() %>
+date: 2024-03-16 23:34
 ---
 
 # Tips & Tricks <img src="https://cdn.7tv.app/emote/60dd13426ef5a66f4134f804/4x.webp" alt="EZ"  width="40" />

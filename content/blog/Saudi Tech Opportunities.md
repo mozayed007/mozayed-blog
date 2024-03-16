@@ -7,7 +7,7 @@ tags:
   - LEAP24
   - Tech
   - Opportunities
-date: <% tp.file.creation_date() %>
+date: 2024-03-16 23:34
 ---
 
 # LEAP24: Tech Opportunities in Saudi Arabia – The New Silicon Valley
