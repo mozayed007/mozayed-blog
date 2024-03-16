@@ -6,7 +6,7 @@ date: <% tp.file.creation_date() %>
 
 ## Check out posts
 
-Here is a **==sample==** of my posts that represent the categories of content you can find on this blog-site:
+A **==sample==** of my posts that represent the categories of content you can find on this blog-site:
 
 - [[blog/index|Blog Posts]]: 
 

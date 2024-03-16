@@ -6,7 +6,7 @@ tags:
   - project
   - recommender
   - content-based-filtering
-date: <% tp.file.creation_date() %>
+date: 2024-03-17 00:44
 ---
 
 For my use case, I would recommend using **LlamaIndex**. Here's why:
