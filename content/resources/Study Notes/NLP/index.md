@@ -7,4 +7,5 @@ tags:
   - Blog
   - NLP
   - LLM
+date: <% tp.file.creation_date() %>
 ---

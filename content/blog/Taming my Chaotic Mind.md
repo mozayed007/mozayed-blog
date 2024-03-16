@@ -4,6 +4,7 @@ draft: false
 tags:   
   - Career
   - Tips
+date: <% tp.file.creation_date() %>
 ---
 # How to keep Up with the chaos
 ---

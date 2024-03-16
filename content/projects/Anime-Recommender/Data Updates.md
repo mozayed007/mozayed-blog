@@ -6,6 +6,7 @@ tags:
   - project
   - recommender
   - content-based-filtering
+date: <% tp.file.creation_date() %>
 ---
 
 # Data Management

@@ -4,6 +4,7 @@ draft: false
 tags:
   - Info
   - About
+date: <% tp.file.creation_date() %>
 ---
 
 

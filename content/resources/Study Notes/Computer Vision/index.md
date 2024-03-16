@@ -7,4 +7,5 @@ tags:
   - computer vision
   - Study
   - Notes
+date: <% tp.file.creation_date() %>
 ---

@@ -6,6 +6,7 @@ tags:
   - LLM
   - Transformers
   - Study-Notes
+date: <% tp.file.creation_date() %>
 ---
 
 # Attention Is All You Need-Transformer

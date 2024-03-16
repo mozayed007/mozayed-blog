@@ -8,5 +8,5 @@ tags:
     - Recommender-System
     - Anime
     - Experiments
-image: images/image-classifier-aws.png
+date: <% tp.file.creation_date() %>
 ---

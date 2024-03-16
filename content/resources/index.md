@@ -7,4 +7,5 @@ tags:
   - Writing
   - Study
   - Notes
+date: <% tp.file.creation_date() %>
 ---
