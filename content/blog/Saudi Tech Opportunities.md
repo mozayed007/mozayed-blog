@@ -14,14 +14,14 @@ date: 2024-03-16 23:34
 
 ---
 
-- **There are multiple opportunities that are rising talents dreaming to kick start their journey in Tech.**
+- **There are multiple opportunities that are rising talents dreaming to kick-start their journey in Tech.**
 - In this summary, I'm focusing on the opportunities that might interest early birds like me who are looking for opportunities to start their careers and what a perspective for needed talents could be.
 
 ## Introduction
 
 Saudi Arabia is emerging as a hub for technology and innovation, akin to the famed Silicon Valley. LEAP 2024, a digital Davos, brings together global tech enthusiasts, change-makers, and visionaries. Here’s a concise summary of the event, focusing on Day 1 and Day 2.
 
-## Day 1 -  Unveiling Cloud Service Providers and Data Centers
+## Day 1 - Unveiling Cloud Service Providers and Data Centers
 
 ### Cloud Service Providers
 
@@ -79,7 +79,7 @@ As Saudi Arabia positions itself as the new Silicon Valley, several tech roles a
 - **Cybersecurity Analyst**: Monitoring and safeguarding systems against security threats.
 - **AI/ML Engineer**: Exploring machine learning models and algorithms.
 - **Data Scientist**: Analyzing complex data, building models, and extracting insights.
--  **Cybersecurity Engineer**: Focusing on network security infrastructure and threat monitoring.
+- **Cybersecurity Engineer**: Focusing on network security infrastructure and threat monitoring.
 - **Full-Stack Developer**: Gaining experience in both front-end and back-end development.
 - **IT Specialist**: Participating in real-world projects and learning from experienced professionals.
 

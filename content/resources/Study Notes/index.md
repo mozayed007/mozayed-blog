@@ -6,6 +6,6 @@ tags:
   - Writing
   - Study
   - Notes
-date: <% tp.file.creation_date() %>
+date: 2024-03-17 00:45
 ---
 ## This is where my nerdy stuff stays.

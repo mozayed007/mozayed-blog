@@ -13,7 +13,7 @@ date: 2024-03-16 23:34
 
 ### Student Days
 
-Advice from Reddit postings of random hero Redditors facing the same issues as grad school students: ( When you're a student you are your own boss).
+Advice from Reddit postings of random hero Redditors facing the same issues as grad school students: (When you're a student, you are your own boss).
 
 1. **Focus on deliverables:** Set concrete tasks (deliverables) to complete each day to stay on track.
 
@@ -30,9 +30,9 @@ Advice from Reddit postings of random hero Redditors facing the same issues as g
 
 4. **"Normal" days:**
     - Schedule tasks that require less focus (coding, reporting, writing results, meetings).
-    - Tasks you know how to do , but "just have to get it done".
+    - Tasks you know how to do, but "just have to get it done".
 
-5. **"Relaxing" days:** Just as the word emphasize Relaxing
+5. **"Relaxing" days:** Just as the word, emphasize Relaxing
     - Dedicate time for leisure activities (reading papers, socializing with colleagues).
       - i.e. sip some tea/coffee and read cool papers
       - socialize with the community and vibe it out.
@@ -67,7 +67,7 @@ In the industry, expect a shift in your day-to-day:
 - **Balance efficiency and progress:** Be prepared to churn out tasks efficiently while demonstrating significant progress on projects at any given moment.
 - **Master time management:** Industry demands promptness with communication and other seemingly small tasks, requiring strong time management skills.
 
-In essence, industry life often becomes a dance between "what needs to be done now?" and "what your brain is capable of today?" , add  "what my boss/supervisor wants you to do" to the mix... which sometimes, but not quite often, aligns with your first and/or second one.
+In essence, industry life often becomes a dance between "what needs to be done now?" and "what your brain is capable of today?" add "what my boss/supervisor wants you to do" to the mix... which sometimes, but not quite often, aligns with your first and/or second one.
 
 ***Don't overthink it - find a balance and keep moving forward.***
 

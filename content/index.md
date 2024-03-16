@@ -19,18 +19,18 @@ A **==sample==** of my posts that represent the categories of content you can fi
 
   - [Study Notes: Spectrograms](resources/Study%20Notes/Signal%20Processing/Spectrograms.md) - Detailed study notes on the topic of Spectrograms in Signal Processing.
   - [Study Notes: Transformers](resources/Study%20Notes/NLP/Transformers.md)- Detailed study notes on the topic of Transformers Architecture in Natural Language Processing.
-  - Coming Soon Notes:  [DUL Berkeley Spring 2024 offering](https://sites.google.com/view/berkeley-cs294-158-sp24/home)-Lecture Notes.
+  - Coming Soon Notes: [DUL Berkeley Spring 2024 offering](https://sites.google.com/view/berkeley-cs294-158-sp24/home)-Lecture Notes.
 
 Feel free to explore these posts and more!
 
 ## 👨‍💻 About Me
 
-- Geek, Gamer, Anime Appreciator, A cat guy 🐱 sorry dogs. more on [[about| About Me]].
+- Geek, Gamer, Anime Appreciator, A cat guy 🐱 sorry dogs, More on [[about| About Me]].
 
 ## 📚 Blog Posts
 
 Here you'll find a collection of my [[blog/index|Thoughts]], [[projects/index|Experiences]], and [[resources/Study Notes/index|Learning]].
-I write about everything I take notes about whether experiences I gain throughout my life journey or content I learn from regarding tech, and occasionally about my hobbies and interests.
+I write about everything I take notes about, whether experiences I gain throughout my life journey or content I learn from regarding tech, and occasionally about my hobbies and interests.
 
 ## 📫 Contact Me
 
