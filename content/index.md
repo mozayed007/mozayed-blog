@@ -7,9 +7,9 @@ date: <% tp.file.creation_date() %>
 
 ## Check out posts
 
-Here are some of my best posts that represent the categories of content you can find on this site:
+Here are a **==sample==** of my posts that represent the categories of content you can find on this blog-site:
 
-- [[blog/index|Blog Posts]]:
+- [[blog/index|Blog Posts]]: 
 
   - [Tools and Tricks: Summary Index](blog/Tools%20and%20Tricks/Summary-Index.md) - A collection of useful tools and tricks for various tasks.
   - [Resume Tips](blog/Resume%20Tips.md) - Tips and advice on how to create an effective resume.
@@ -19,6 +19,8 @@ Here are some of my best posts that represent the categories of content you can 
 - [[resources/index|Resources]]:
 
   - [Study Notes: Spectrograms](resources/Study%20Notes/Signal%20Processing/Spectrograms.md) - Detailed study notes on the topic of Spectrograms in Signal Processing.
+  - [Study Notes: Transformers](resources/Study%20Notes/NLP/Transformers.md)- Detailed study notes on the topic of Transformers Architecture in Natural Language Processing.
+  - Coming Soon Notes:  [DUL Berkeley Spring 2024 offering](https://sites.google.com/view/berkeley-cs294-158-sp24/home)-Lecture Notes.
 
 Feel free to explore these posts and more!
 
