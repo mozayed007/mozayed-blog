@@ -21,22 +21,22 @@ If your data is updated every three months, you can handle this in LlamaIndex by
 
 Here's a basic example of how you might implement this in code:
 
-    ```python
-    def update_index(self, new_data_path):
-        # Load the new data
-        new_data = self.load_data(new_data_path)
+```python
+def update_index(self, new_data_path):
+	# Load the new data
+	new_data = self.load_data(new_data_path)
 
-        for anime in new_data:
-            # Compute the embedding of the anime description
-            embedding = self.language_model.encode(anime.description)
+	for anime in new_data:
+		# Compute the embedding of the anime description
+		embedding = self.language_model.encode(anime.description)
 
-            # If the anime already exists in the index, update its entry
-            if self.index.exists(anime.id):
-                self.index.update(anime.id, embedding, anime.categorical_features)
-            # Otherwise, add a new entry for the anime
-            else:
-                self.index.add(anime.id, embedding, anime.categorical_features)
-    ````
+		# If the anime already exists in the index, update its entry
+		if self.index.exists(anime.id):
+			self.index.update(anime.id, embedding, anime.categorical_features)
+		# Otherwise, add a new entry for the anime
+		else:
+			self.index.add(anime.id, embedding, anime.categorical_features)
+```
 
 Please note that this is a basic example. You’ll need to modify it according to your specific requirements and the actual structure of your data. Also, remember to handle exceptions and edge cases in your code to make it robust and reliable.
 
@@ -48,10 +48,10 @@ Record management is a crucial aspect of any data-driven system. It helps keep t
 
 For a simple record management system, you could keep a log file where each line records an operation on the index. Here's an example of what each line in the log file might look like:
 
-    ```code
-    2024-03-01 12:34:56, ADD, anime123, “Anime 123 description” 
-    2024-03-01 12:35:07, UPDATE, anime456, “Updated Anime 456 description”
-    ```
+```code
+2024-03-01 12:34:56, ADD, anime123, “Anime 123 description” 
+2024-03-01 12:35:07, UPDATE, anime456, “Updated Anime 456 description”
+```
 
 Each line contains a timestamp, the operation (ADD or UPDATE), the ID of the anime, and the new description of the anime.
 
