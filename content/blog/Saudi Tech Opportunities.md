@@ -52,7 +52,7 @@ Saudi Arabia is emerging as a hub for technology and innovation, akin to the fam
   3. **FundSwift**: Providing bridge financing for startups, accelerating early-stage startup growth through swift financing! 📈
   4. **Transform+**: Designed to bridge the technology gap for startups to adapt to the cloud! ☁️
   5. **SourceTech**: Incentivizing IT outsourcing firms to establish themselves within Saudi Arabia! 🏗️
-  - These are the 5 different products that NTDP officially announced at #LEAP24.0
+  - These are the 5 different products that NTDP officially announced at #LEAP24.
 	  ![[Attachments/GH5bZgxXoAAExxW.jpeg]]
 
 ## In-Demand Tech Roles in Saudi Arabia
