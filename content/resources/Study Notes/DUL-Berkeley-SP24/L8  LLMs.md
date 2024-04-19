@@ -14,6 +14,7 @@ date: <% tp.file.creation_date() %>
 ###  Deep Unsupervised Learning - Berkeley - Sp24 - L8:
 - The Note is for  [Lecture 8](https://www.youtube.com/watch?v=tCgX48cvuw4) of [DUL Berkeley Spring 2024 offering](https://sites.google.com/view/berkeley-cs294-158-sp24/home), 
 - Guest lecturer [Hao Liu](https://www.haoliu.site/), a Final Year PhD. student at Berkeley
+- The Lecture Notes are work under construction, The lecture is much richer in information, and I'm working on the notes for the rest of the lecture. I'll update the content with the rest of the lecture ASAP.
 ---
 ### Language Model Abstraction:
 
