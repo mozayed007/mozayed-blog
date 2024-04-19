@@ -132,7 +132,8 @@ In 2017, people researches tried training LSTM with more compute on sentiment an
 		  
 - The model was able to comprehend human sentiment (+ve / -ve) by benefitting from more compute, that was a difficult language task back 7 years ago.
 - Visual heatmap of sentiment neurons' values was generated on top of a document composed of 6 random highly contrasted IMDB reviews:
-		![[Attachments/visual-LSTM-Compute.png]]
+
+	![[Attachments/Visual-LSTM-Compute.png]]
 		
 	-  Red for (-ve) and Green for (+ve) that was an advancement back in 2017.
 
@@ -165,13 +166,13 @@ However, there are other objectives that define the training of the model, for e
 - Masked Token Prediction used by: BERT, ELMO.
 - Prefix autoregressive prediction used by: T5. 
   
-	![[attachments/Objectives-training-LLMS.png]]
+	![[Attachments/Objectives-training-LLMS.png]]
 - Masked token prediction is an effective objective for masked language models, as it helps them learn the full semantic meaning of a sequence.
 	- Example: Embedding Model for searching retrieval.
 - Prefix autoregressive predictions are an interesting alternative to masked token prediction for PLMs, but they are not yet widely used.
 	- Most of Encoder-Decoder models they can be reformulated as autoregressive prediction but with a different attention mask like a prefix mask, the Encoder is the bidirectional attentive while the autoregressive part is the decoder.
 - For visualization and clarification:
-	![[attachments/attention-masking-visual.png]]
+	![[Attachments/attention-masking-visual.png]]
 	
 	- X-axis and Y-axis are both the sequence of tokens.
 	- PLM is the Non-Causal Decoder Middle graph.
@@ -198,7 +199,7 @@ However, there are other objectives that define the training of the model, for e
 			- pick the lowest test loss and draw the line fitting the lowest (fit the lowest loss).
 			- Coefficients of model scaling and data scaling vary with the data distribution of the dataset itself.
 			-   Wiser Compute allocation is always better than scaling-up:
-				![[attachments/chinchilla-wiser-compute.png]]
+				![[Attachments/chinchilla-wiser-compute.png]]
 			
 			- Chinchilla outperforms Megatron by allocating compute better.
 			  
