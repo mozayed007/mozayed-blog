@@ -1,6 +1,6 @@
 ---
 title: Welcome to My Space
-date: <% tp.file.creation_date() %>
+date: 2024-04-19 15:14
 ---
 
 
