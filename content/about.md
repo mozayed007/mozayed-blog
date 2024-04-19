@@ -117,7 +117,10 @@ date: 2024-03-16 23:34
 
 To see all the other badges are [here](https://www.credly.com/users/mozayed007/badges)
 
-[![Introduction to Cybersecurity, Cisco](https://images.credly.com/size/120x120/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png)](https://www.credly.com/badges/487f1395-6ec1-454b-8463-040e0f407a19)
-[![ISC2 Candidate](https://images.credly.com/size/120x120/images/9180921d-4a13-429e-9357-6f9706a554f0/image.png)](https://www.credly.com/badges/b345603b-5c85-4f2e-99d4-18e09d347c27)
-
+<a href="https://www.credly.com/badges/487f1395-6ec1-454b-8463-040e0f407a19">
+    <img src="https://images.credly.com/size/120x120/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png" width="150">
+</a>
+<a href="https://www.credly.com/badges/b345603b-5c85-4f2e-99d4-18e09d347c27">
+    <img src="https://images.credly.com/size/120x120/images/9180921d-4a13-429e-9357-6f9706a554f0/image.png" width="150">
+</a>
 ---

@@ -1,5 +1,5 @@
 ---
-title: Large Language Models - L8
+title: Large Language Models  (Lecture 8)
 draft: false
 tags:
   - NLP
