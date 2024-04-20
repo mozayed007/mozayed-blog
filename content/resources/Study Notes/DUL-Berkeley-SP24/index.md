@@ -9,5 +9,5 @@ tags:
   - LLM
   - Lecture Notes
   - DUL
-date: <% tp.file.creation_date() %>
+date: 2024-04-20 04:54
 ---

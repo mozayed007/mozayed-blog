@@ -7,7 +7,7 @@ tags:
   - Transformers
   - Study-Notes
   - DUL
-date: <% tp.file.creation_date() %>
+date: 2024-04-20 04:54
 ---
 
 ##  **Lecture 8: Large Language Models** (***LLMs***):
