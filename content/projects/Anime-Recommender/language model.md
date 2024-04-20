@@ -8,7 +8,7 @@ tags:
   - content-based-filtering
 date: 2024-03-17 00:44
 ---
-# language_model.py
+# language_model.py - Initial thoughts
 
 The `language_model.py` file is responsible for all operations related to the language model. This includes loading the model and computing embeddings for text.
 

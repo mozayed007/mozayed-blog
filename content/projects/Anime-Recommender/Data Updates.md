@@ -9,7 +9,7 @@ tags:
 date: 2024-03-17 00:44
 ---
 
-# Data Management
+# Data Management - Initial thoughts
 
 If your data is updated every three months, you can handle this in LlamaIndex by re-indexing your data. Here's a high-level overview of how you might do this:
 

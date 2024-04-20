@@ -9,7 +9,7 @@ tags:
 date: 2024-03-17 00:44
 ---
 
-# Basic Structure
+# Basic Structure - Initial thoughts
 
 ## Overview
 

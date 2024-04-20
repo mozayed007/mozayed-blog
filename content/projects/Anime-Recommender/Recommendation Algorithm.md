@@ -9,7 +9,7 @@ tags:
 date: 2024-03-17 00:44
 ---
 
-# Anime Recommendation Algorithm
+# Content-Based Filtering Recommendation Algorithm - Initial thoughts
 
 This document outlines the design of an anime recommendation algorithm that leverages semantic similarity and content-based filtering. The algorithm uses LlamaIndex for semantic similarity computations and a vector database for efficient similarity search.
 
