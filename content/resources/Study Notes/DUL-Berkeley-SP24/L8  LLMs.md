@@ -6,7 +6,7 @@ tags:
   - LLM
   - Transformers
   - Study-Notes
-  - DLU
+  - DUL
 date: <% tp.file.creation_date() %>
 ---
 
