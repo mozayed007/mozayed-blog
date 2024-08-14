@@ -1,3 +1,14 @@
+---
+title: Supervised vs Unsupervised Learning
+draft: false
+tags:
+  - ML
+  - Machine Learning
+  - Study-Notes
+  - A(A)AMLP
+date: 2024-08-15 01:54
+---
+
 - Mainly in realm of Machine Learning there're generally 2 types of data/models.
 	- Supervised data: Has one or many labels/targets associated with its features.
 	- Unsupervised data: Doesn't have any labels/target variables.
@@ -12,3 +23,4 @@
 		- Multi-Dimensional Scaling (MDS).
 		- t-Distributed Stochastic Neighbor Embedding (t-SNE).
 - In Evaluation stages supervised problems can be tackled easier than unsupervised ones.
+- 
