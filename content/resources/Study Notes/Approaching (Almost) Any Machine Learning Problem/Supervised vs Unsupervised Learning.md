@@ -1,0 +1,3 @@
+- Mainly in realm of Machine Learning there're generally 2 types of data/models.
+	- Supervised data: Has one or many labels/targets associated with its features.
+	- Unsupervised data: Doesn't have any labels/target variables.
