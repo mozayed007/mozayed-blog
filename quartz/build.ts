@@ -38,8 +38,13 @@ type BuildData = {
 
 type FileEvent = "add" | "change" | "delete"
 
+function newBuildId() {
+  return new Date().toISOString()
+}
+
 async function buildQuartz(argv: Argv, mut: Mutex, clientRefresh: () => void) {
   const ctx: BuildCtx = {
+    buildId: newBuildId(),
     argv,
     cfg,
     allSlugs: [],
@@ -167,6 +172,7 @@ async function partialRebuildFromEntrypoint(
 
   const perf = new PerfTimer()
   console.log(chalk.yellow("Detected change, rebuilding..."))
+  ctx.buildId = newBuildId()
 
   // UPDATE DEP GRAPH
   const fp = joinSegments(argv.directory, toPosixPath(filepath)) as FilePath
@@ -309,6 +315,8 @@ async function partialRebuildFromEntrypoint(
   }
   await rimraf([...destinationsToDelete])
 
+  console.log(chalk.green(`Done rebuilding in ${perf.timeSince()}`))
+
   toRemove.clear()
   release()
   clientRefresh()
@@ -361,14 +369,10 @@ async function rebuildFromEntrypoint(
 
   const perf = new PerfTimer()
   console.log(chalk.yellow("Detected change, rebuilding..."))
+  ctx.buildId = newBuildId()
+
   try {
     const filesToRebuild = [...toRebuild].filter((fp) => !toRemove.has(fp))
-
-    const trackedSlugs = [...new Set([...contentMap.keys(), ...toRebuild, ...trackedAssets])]
-      .filter((fp) => !toRemove.has(fp))
-      .map((fp) => slugifyFilePath(path.posix.relative(argv.directory, fp) as FilePath))
-
-    ctx.allSlugs = [...new Set([...initialSlugs, ...trackedSlugs])]
     const parsedContent = await parseMarkdown(ctx, filesToRebuild)
     for (const content of parsedContent) {
       const [_tree, vfile] = content
@@ -381,6 +385,13 @@ async function rebuildFromEntrypoint(
 
     const parsedFiles = [...contentMap.values()]
     const filteredContent = filterContent(ctx, parsedFiles)
+
+    // re-update slugs
+    const trackedSlugs = [...new Set([...contentMap.keys(), ...toRebuild, ...trackedAssets])]
+      .filter((fp) => !toRemove.has(fp))
+      .map((fp) => slugifyFilePath(path.posix.relative(argv.directory, fp) as FilePath))
+
+    ctx.allSlugs = [...new Set([...initialSlugs, ...trackedSlugs])]
 
     // TODO: we can probably traverse the link graph to figure out what's safe to delete here
     // instead of just deleting everything
