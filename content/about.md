@@ -25,47 +25,35 @@ date: 2024-03-16 23:34
 </p>
 </div>
 
-### 😼 | About Me
+## 😼 | About Me
 
-- 🌱 I’m currently pursuing: Machine Learning Engineering, and (Cybersecurity (_**self-study**_)).
+- 🌱 I’m currently pursuing: Machine Learning Engineering, Research Engineering.
   
-- 🛠 I've experienced Freelancing, Online Tutoring, and working on Machine/Deep Learning, NLP, and LLMs projects as a contractor.
+- 🛠  I've experienced  Freelancing,  Online Tutoring, and working on Machine/Deep Learning, NLP, and LLMs projects as a contractor.
   
-- 🧑🏻‍💻Currently experimenting with PEFT algorithms in domains other than NLP like Computer Vision applications, embedding vector store applications (recommendation engines, RAGs, …etc.), benchmarking and evaluation systems for domain-specific problems.
+- 🧑🏻‍💻Currently experimenting with PEFT algorithms in domains other than NLP like Computer Vision applications, GenAI applications (recommendation Sys, RAGs, ..etc.), benchmarking and evaluation systems for domain-specific problems, and representation systems for different types of data."To the vector store, or the knowledge graph, maybe both, maybe another novel representation".
   
- - 🧠 Interested in:
+- 🧠 Interested in:
+    
     - Domain-Specialized AI development:
         
-        - I want to merge domain knowledge within ML Architectures to develop optimized and efficient AI solutions that won't cost thousands of households electricity usage.
-    - Integration of AI and Cybersecurity:
-        
-        - Whether it's the security/privacy of AI and its solutions or integration of AI in the cybersecurity domain itself.
+        - I want to merge domain knowledge of the problem within ML to develop optimized and efficient ML solutions that won't cost thousands of households electricity usage.
     - Interpretability and Alignment of AI :
         
         - Anthropic fan in those areas.
-	   
-	   
+    - Integration of AI and Cybersecurity:
+        
+        - Whether it's the security/privacy of AI and its solutions or integration of AI in the cybersecurity domain itself.   
+
 - 🏫 CIE Graduate from UST Zewail City.
   
 - 🏓 Hobbies:
     - Reading Research Papers, / Watching Podcasts and Interviews.
-    - Blogging / Writing Notes on Obsidian on my Hidden Vault. 🥷🏻
+    - Blogging / Writing Notes on Obsidian on my Hidden Vault. 🧰
     - Anime, MMORPGs, TFT, FPS 🎮.
 
 ---
-
-### Contact me
-
- [📝 Blog](https://mozayed007.github.io/mozayed-blog) | [🐦 Twitter](https://twitter.com/MoZayed007) | [🤝 LinkedIn](https://www.linkedin.com/in/mozayed007/)
-
-- 📫 How to reach me :
-
-  <p align="center" style="text-align: center;">    📧 Academic contact: s-mohamedzayed@zewailcity.edu.eg </p>  
-   <p align="center " style="text-align: center;">    📧 Personal / Business  contact : moh.z.ahmed007@gmail.com </p>
-
----
-
-### 🛠️ | Languages and Tools
+## 🛠️ | Languages and Tools
 
 <p align="left">
 <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a>
@@ -83,8 +71,27 @@ date: 2024-03-16 23:34
 </p>
 
 ---
+## Contact Me
 
-### 🔥|  My Stats
+ [📝 Blog](https://mozayed007.github.io/mozayed-blog) | [🐦 Twitter](https://twitter.com/MoZayed007) | [🤝 LinkedIn](https://www.linkedin.com/in/mozayed007/)
+
+- 📫 How to reach me :
+
+  <p align="center" style="text-align: center;">    📧 Academic contact: s-mohamedzayed@zewailcity.edu.eg </p>  
+   <p align="center " style="text-align: center;">    📧 Personal / Business  contact : moh.z.ahmed007@gmail.com </p>
+
+
+---
+
+## 🕛 | WakaTime
+
+[![Github Wakatime Stats](https://github-readme-stats.vercel.app/api/wakatime?username=mozayed007)](https://github-readme-stats.vercel.app/api/wakatime?username=mozayed007)
+
+<img src="https://wakatime.com/share/@mozayed007/59f67f85-010a-4267-a9e6-50a27326c520.svg" width="50%">
+
+---
+
+## 🔥| My Stats
 	
 <p align="center">
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mozayed007&hide_border=true&theme=tokyonight" alt="Top Languages" width="24%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -97,32 +104,27 @@ date: 2024-03-16 23:34
 </p>
 </br>
 
----
-
-### 🕛 | WakaTime
-
-[![Github Wakatime Stats](https://github-readme-stats.vercel.app/api/wakatime?username=mozayed007)](https://github-readme-stats.vercel.app/api/wakatime?username=mozayed007)
-
-<img src="https://wakatime.com/share/@mozayed007/59f67f85-010a-4267-a9e6-50a27326c520.svg" width="50%">
 
 ---
 
-### 🎶| Spotify Status
+## 🎶| Spotify Status
 
-[![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view?uid=li2y5wg127wk16dldhvsqg7tr&cover_image=true&theme=default&show_offline=false&background_color=121212)](https://spotify-github-profile.vercel.app/api/view?uid=li2y5wg127wk16dldhvsqg7tr&cover_image=true&theme=default&show_offline=false&background_color=121212)
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 10px;">
+  <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=li2y5wg127wk16dldhvsqg7tr&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=false&bar_color=53b14f&bar_color_cover=false" alt="spotify-github-profile" style="height: 400px;">
+  <img src="https://spotify-recently-played-readme.vercel.app/api?user=li2y5wg127wk16dldhvsqg7tr&unique=true" alt="Spotify recently played" style="height: 400px;">
+</div>
 
-[![Spotify recently played](https://spotify-recently-played-readme.vercel.app/api?user=li2y5wg127wk16dldhvsqg7tr&unique=true)](https://spotify-recently-played-readme.vercel.app/api?user=li2y5wg127wk16dldhvsqg7tr&unique=true)
 
 ---
 
-### 😎| Badges 
+## 😎| Badges
 
 
-#### My Holopin Badges | <img src = "https://media.giphy.com/media/3orifgYbnsq43eFsdO/giphy.gif" align="center" width="40" height ="30">
+### My Holopin Badges | <img Src = "https://media.giphy.com/media/3orifgYbnsq43eFsdO/giphy.gif" align="center" width="40" Height ="30">
 
 [![An image of @mozayed007's Holopin badges](https://holopin.me/mozayed007)](https://holopin.me/mozayed007)
 
-#### My Last Credly badges  
+### My Last Credly Badges
 
 To see all the other badges are [here](https://www.credly.com/users/mozayed007/badges)
 
