@@ -209,11 +209,14 @@ However, there are other objectives that define the training of the model, for e
 	- log-log correlation between factors.
 	-  $N_{opt}(C), D_{opt}(C) = \underset{N,D s.t. FLOPs(N,D)=C} {\arg\min} L(N,D)$
 	- $N_{opt} \propto C^{a}, D_{opt} \propto C^{b}$
-	- $a+b=1$ as $C=6ND$
-	- Researchers tried training different model sizes / number of tokens to find scaling hypotheses 
+	- $a+b=1$ as $C=6ND$ , allocate more compute to parameters (a), or tokens (b)
+	- Researchers tried training different model sizes / number of tokens to conclude a scaling hypothesis 
 		![[Attachments/scaling_hypothesis.png]]
-		- 
+		- Different compute allocations on x-axis.
+		- Test Loss on un-seen data on y-axis.
+		- The lowest point for each particular configuration (Compute Allocation), the black line- shows a log-log correlation.
 	- which to choose a (more compute to parameters) or b(more compute to tokens):
+		![[Attachments/scaling_allocation2.png]]
 		- OpenAI (2020) gives more to parameters.
 		- DeepMind(2022) gives more compute to tokens.
 		- Best practice: Train different small models of your desired architecture on different data sizes and fit the constant yourself.
@@ -221,16 +224,62 @@ However, there are other objectives that define the training of the model, for e
 			- Coefficients of model scaling and data scaling vary with the data distribution of the dataset itself.
 			-   Wiser Compute allocation is always better than scaling-up:
 				![[Attachments/chinchilla-wiser-compute.png]]
-			
 			- Chinchilla outperforms Megatron by allocating compute better.
+			- Chinchilla law (hypothesis): a=0.49, b=0.51.
+			-  Chinchilla (70B) model more compute efficient than:
+				- GPT-3(175B), Gopher(280B) and Megatron-Turing NLG (530B)
+			-  Chinchilla has simple guidelines they created a sample suggestions table
+				![[Attachments/hypothesis_table.png]]
+				- Where FLOPs are Floating Point Operations Per Second.
+				- It's better to do more than double of that proven nowadays more than 40x parameters.
+				- Llama 7b is trained on 7x Chinchilla optimal estimate.
+				- Model size can change in increasing hidden layers or number of blocks/layers or both.
+	- Scaling Hypotheses are for guidance on how to spend compute more efficiently.
+	- But dataset quality improvements always guarantee model improvements generally.
+			
 			  
-			  
-			  
-- However, [LLaMA-3](https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md) Using 15T tokens on 8B, 70B parameters model made the performance improvements clear and as announced the models weren't hitting saturation / convergence and 8B model great performance on various benchmarks, with Llam3-8B doing better than Llama2-70B in some cases.
+- However, [Llama-3](https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md) Using 15T tokens on 8B, 70B parameters model made the performance improvements clear and as announced the models weren't hitting saturation / convergence and 8B model great performance on various benchmarks, with Llam3-8B doing better than Llama2-70B in some cases.
 - The focus on both optimizing compute and FLOPs while increasing quality of training Token Count, where 15T didn't even saturate a 8B parameters model, will be the focus of upcoming foundational models development and research.
+- Loss determines the final estimate of downstream performance, regardless of model size if they have same loss they'll have the same performance.
+![[Attachments/loss_downstream.png]]
+- In practice, loss can help you determine if you can go smaller.
+
+---
+## LLM-Bottlenecks
+### Large Context
+
+- Transformers cannot by default fit complex, long sequences, because Transformer attention has high memory cause.
+- Example needs: Agents, World Modeling, Codebases, Genome and hyperlinked web.
+- Attention weight matrix has quadratic memory cost, 
+	- Some efforts tried to fix that for example:
+		- re-ordering compute as Blockwise parallel transformers as an example.
+			![[Attachments/block_parallel.png]]
+	- Standard Attention + Standard FFN (Feed-forward network): - > $O(s^2)$
+		- Peak of attention: $O(s^2)$
+		- Peak of FFN: $8bsh$
+	- Memory Efficient Attention + Standard FFN: - > $8bsh$  (Flash Attention)
+		- Peak of attention: $max(4bch , 2bsh)=2bsh$ 
+		- Peak of FFM: $8bsh$
+	- BPT:  - > $2bsh$ (Blockwise Parallel transformer)
+		- Peak of attention: $2bsh$
+		- Peak of FFN:  $max(4bch , 2bsh)=2bsh$ , because $s >> c$
+		- 4x smaller peak activation memory
+![[Attachments/bpt_goesbrr.png]]
+- Google tried it on Gemma models got:
+	- 16x expanded MLP hidden dimension.
+	- BPT allows 16x memory saving without overhead.
+	- longer sequence hence longer contexts.
+- We still can't do Million-length sequence:
+	- Memory cost $(2bsh)$ scales with sequence length $s$.
+	- chip memory have scaling limitations (we're already pushing against physics limitations)
+	- Multiple GPUs in parallel for same sequence isn't the answer as attention requires pairwise interactions.
+	 
+
+
+
 ---
 # Resources:
 - Lecture 8 video : [Lecture 8](https://www.youtube.com/watch?v=tCgX48cvuw4).
 -  [DUL Berkeley Spring 2024 offering](https://sites.google.com/view/berkeley-cs294-158-sp24/home)
 -  Screenshots from the [Lecture 8 PDF](https://drive.google.com/file/d/13YWiY4LLv_qshkSglpDh2VRnAbBHB6SX/view?usp=drive_link).
-- [LLaMA 3](https://llama.meta.com/llama3/)
+- [Llama 3](https://llama.meta.com/llama3/)
