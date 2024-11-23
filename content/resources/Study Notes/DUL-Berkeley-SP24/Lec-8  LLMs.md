@@ -10,11 +10,17 @@ tags:
 date: 2024-04-20 04:54
 ---
 
-##  **Lecture 8: Large Language Models** (***LLMs***):
-###  Deep Unsupervised Learning - Berkeley - Sp24 - L8:
-- The Note is for  [Lecture 8](https://www.youtube.com/watch?v=tCgX48cvuw4) of [DUL Berkeley Spring 2024 offering](https://sites.google.com/view/berkeley-cs294-158-sp24/home), 
-- Guest lecturer [Hao Liu](https://www.haoliu.site/), a Final Year PhD. student at Berkeley
-- The Lecture Notes are work under construction, The lecture is much richer in information, and I'm working on the notes for the rest of the lecture. I'll update the content with the rest of the lecture ASAP.
+## **Lecture 8: Large Language Models (LLMs)**  
+### Deep Unsupervised Learning - Berkeley - Spring 2024  
+This page covers [Lecture 8](https://www.youtube.com/watch?v=tCgX48cvuw4) from the [Deep Unsupervised Learning (DUL)](https://sites.google.com/view/berkeley-cs294-158-sp24/home) course, Berkeley Spring 2024.  
+
+#### **Key Details:**  
+- **Topic:** Large Language Models (LLMs)  
+- **Instructor:** [Hao Liu](https://www.haoliu.site/), Final-Year Ph.D. student at Berkeley  
+- **Status:** These notes are currently a work in progress. The lecture is packed with detailed insights, and additional content will be added soon.  
+
+Stay tuned for updates as I continue to expand and refine these notes to capture the full depth of the lecture!  
+
 ---
 ### Language Model Abstraction:
 
