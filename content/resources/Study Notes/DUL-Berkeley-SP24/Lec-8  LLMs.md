@@ -10,19 +10,20 @@ tags:
 date: 2024-11-23 20:54
 ---
 
-## **Lecture 8: Large Language Models (LLMs)**  
-### Deep Unsupervised Learning - Berkeley - Spring 2024  
+# **Lecture 8: Large Language Models (LLMs)**
+## Deep Unsupervised Learning - Berkeley - Spring 2024
 This page covers [Lecture 8](https://www.youtube.com/watch?v=tCgX48cvuw4) from the [Deep Unsupervised Learning (DUL)](https://sites.google.com/view/berkeley-cs294-158-sp24/home) course, Berkeley Spring 2024.  
 
-#### **Key Details:**  
+### **Key Details:**
 - **Topic:** Large Language Models (LLMs)  
 - **Instructor:** [Hao Liu](https://www.haoliu.site/), Final-Year Ph.D. student at Berkeley  
 - **Status:** These notes are currently a work in progress. The lecture is packed with detailed insights, and additional content will be added soon.  
+- **Outline:** Lecture split into 2 sections ( basics, scaling laws and capabilities ) and 2nd section for practical guidelines for research and practical purposes.
 
 Stay tuned for updates as I continue to expand and refine these notes to capture the full depth of the lecture!  
 
 ---
-### Language Model Abstraction:
+## Language Model Abstraction:
 
 - A Language Model is a probability distribution over sequences:
 	-  Likelihood distribution: $p_{\theta}(y)$
@@ -31,7 +32,7 @@ Stay tuned for updates as I continue to expand and refine these notes to capture
 	  
 - Typically Language Models are autoregressive since it factorize sequences auto regressively.
 	- Formula:		$$ p_{\theta} = \prod_{t=1}^{T}{p_{\theta}(y_{t}| y < t )}  $$
-- Models are parameterized by a transformer.
+-  T (tokens) going to condition on only tokens before it, Models are parameterized by a transformer.
   
 -  So in summary the model is an autoregressive likelihood distribution over a sequence of tokens.
   
@@ -42,14 +43,14 @@ Stay tuned for updates as I continue to expand and refine these notes to capture
 	- Natural for Conversational AI.
 		- Models suitable for following up conversation by ***Predicting Future Tokens***.
 	
-- Maximum Likelihood:
+- Maximum Likelihood (Modeling Likelihood):
 	-  The Goal is to make the observed data likely predictable under the model.
 		- The **Objective Function** Formula: $$\underset{\theta}{\arg\max} \frac{1}{D} \sum_{y \in D} \log(p_{\theta}(y))$$
-			- D is for example 1.5 Trillion Tokens in LLaMA.
+			- D is for example 1.5 Trillion Tokens in Llama.
 			- ${\theta}$ is for example 7 to 70 billion parameters.
 ---
-### Language Model Training:
- ####  **Stages of Learning**
+## Language Model Training:
+### **Stages Of Learning**
 
 1. Pretraining:
 	- Done in Large scale.
@@ -83,14 +84,14 @@ The reason behind choosing ***Unsupervised Learning*** :
 	- Notice that the curves aren't saturated and are continuously decreasing.
 		- We still have way more available data on the internet for language learning.
 ---
-### Scaling Compute
+## Scaling Compute
 
 > **“The biggest lesson that can be read from 70 years of AI research is that general methods that leverage computation are ultimately the most effective, and by a large margin.”**
 > — _The Bitter Lesson, Richard Sutton, 2019_
 
 - In summary: The major AI successes is going to come from methods that leverage computation
 	- Typically the goal is to model the data distribution better by adding more compute.
-	- Compute
+	- Compute analogy
 		- It's the forward and backward pass (back-propagation).
 		- Mostly spent on matrix multiplications (matmul)
 		- Measured using (FLOPs)
@@ -104,12 +105,12 @@ The reason behind choosing ***Unsupervised Learning*** :
 		- TL;DR Using more tokens (larger dataset), larger context windows (longer sequences of data), and larger models add up compute costs.
 			- Does that mean AGI will require the electricity of a country's households ?
 ---
-### Tokens:
+## Tokens:
 
 - Byte-Based Tokenization : 
 	- Most Generic for all types of data sequences.
 	- It's too long, leading to a lot more compute cost.
-	- little bit unnecessary
+	- little bit unnecessary in some perspectives.
 	  
 - Character-Based Tokenization :
 	- Similar problem as Byte-Based long words require too many tokens.
@@ -121,10 +122,17 @@ The reason behind choosing ***Unsupervised Learning*** :
 - Sub-word-Based Tokenization :
 	- A trade-off in between both worlds.
 	- Byte-Pair Encoding: Replacing top appearing pairs with a new token.
-		- It has the heart of frequency based feature extraction algorithm in classic classification problems.
+		- It has the heart of frequency based feature extraction algorithm in classical classification problems.
+		- Example: ***tiktoken*** (used by OpenAI models like GPT-4).
+		- Pros:
+			- **Compact Vocabulary**: Byte-based tokenization drastically reduces the vocabulary size since all tokens can be built from a limited set of byte sequences.
+			- **Multilingual Support**: It handles characters from any language (e.g., Chinese, Arabic, emojis) without requiring separate tokenization logic.
+			- **Consistency**: Byte-level tokenization avoids ambiguity in how characters or sequences are split.
+			- Allows handling diverse character sets, including non-ASCII characters, without special preprocessing.
+			- Avoids complications arising from Unicode normalization. Each character or emoji is consistently tokenized regardless of its codepoint.
 	- Repeating until having a dictionary for tokens and a vocab size of tokens
 	  
-In 2017, people researches tried training LSTM with more compute on sentiment analysis, where it learns a sentiment neuron (+ve / -ve) after training to predict the next word on a large dataset of Amazon reviews.
+In 2017, researchers tried training LSTM with more compute on sentiment analysis on amazon reviews, where it learns a sentiment neuron (+positive / -negative) after training to predict the next word on a large dataset of Amazon reviews.
 - They basically did autoregressive next token prediction.
 - The following graphs helped them deduce that:
   
@@ -133,16 +141,16 @@ In 2017, people researches tried training LSTM with more compute on sentiment an
 	- X-axis Observations: 
 		- There are some neurons can be used to control the output of the LSTM.
 	- Y-axis Observations:
-		- Number of LSTM's output that're either (+ve) or (-ve).
-	- By controlling the values of certain neurons, you can influence the LSTM's generative output to generate either (+ve) sentiment or (-ve) sentiment in reviews.
+		- Number of LSTM's output that're either (positive) or (negative).
+	- By controlling the values of certain neurons, you can influence the LSTM's generative output to generate either (positive) sentiment or (negative) sentiment in reviews.
 		- what a scary observation for product review batting 👾💀.
 		  
-- The model was able to comprehend human sentiment (+ve / -ve) by benefitting from more compute, that was a difficult language task back 7 years ago.
+- The model was able to comprehend human sentiment (positive / negative) by benefitting from more compute, that was a difficult language task back 7 years ago.
 - Visual heatmap of sentiment neurons' values was generated on top of a document composed of 6 random highly contrasted IMDB reviews:
 
 	![[Attachments/Visual-LSTM-Compute.png]]
 		
-	-  Red for (-ve) and Green for (+ve) that was an advancement back in 2017.
+	-  Red for (negative) and Green for (positive) that was an advancement back in 2017.
 
 Then came a new proposed architecture called ***Attention,*** which scales much better than LSTMs.[[Transformers | Transformer models]] asymptotically outperformed LSTMs because of better use of context and specially when context window increases.
 	![[Attachments/Attention-beating-LSTM.png]]
@@ -163,10 +171,10 @@ Then came a new proposed architecture called ***Attention,*** which scales much 
 	   
 - Attention helps keeping focus and information on past tokens without forgetting them.
 	- LSTM you had to maintain certain hidden states, but in attention you can directly attend to any past token, the model doesn't have this information bottleneck.
-	- You can easily increase model parameters by adding bigger MLP networks
+	- You can easily increase model parameters by adding bigger MLP networks (Big FFNs, highly scalable)
 		- which are large matrix multiplications so it scales well with modern GPUs and TPUs.
 ---
-### Pretraining Objectives
+## Pretraining Objectives
 
 We talked about full autoregressive prediction objective used by models like GPT, LLaMA.
 However, there are other objectives that define the training of the model, for example:
@@ -175,30 +183,36 @@ However, there are other objectives that define the training of the model, for e
   
 	![[Attachments/Objectives-training-LLMS.png]]
 - Masked token prediction is an effective objective for masked language models, as it helps them learn the full semantic meaning of a sequence.
-	- Example: Embedding Model for searching retrieval.
+	- Example: Embedding Model for search, retrieval, catching semantic meaning better.
 - Prefix autoregressive predictions are an interesting alternative to masked token prediction for PLMs, but they are not yet widely used.
-	- Most of Encoder-Decoder models they can be reformulated as autoregressive prediction but with a different attention mask like a prefix mask, the Encoder is the bidirectional attentive while the autoregressive part is the decoder.
+	- Most of Encoder-Decoder models they can be reformulated as autoregressive prediction but with a different attention mask like a prefix mask, the Encoder is the bidirectional attentive while the autoregressive part is the decoder, Encoder is usually bi-directional (Masked), the auto-regressive one is the decoder.
 - For visualization and clarification:
 	![[Attachments/attention-masking-visual.png]]
 	
 	- X-axis and Y-axis are both the sequence of tokens.
-	- PLM is the Non-Causal Decoder Middle graph.
+	- PLM (Prefix Language Model) is the Non-Causal Decoder Middle graph.
 	- Full Autoregressive widely used GPT model is the Causal Decoder first graph.
 		- Different Objects but approximately similar amount of FLOPs computationally.
 	- The Last one, which is the Encoder-Decoder [[Transformers]] tends to out to be the most scalable.
-		-  Upstream (-ve) Log-perplexity : Vanilla Transformer outperforms other models.
+		-  Upstream (negative) Log-perplexity : Vanilla Transformer outperforms other models.
 		- Downstream accuracy : Vanilla Transformer outperforms other models.
 		- An interesting question to explore is how the performance of the vanilla model compares to that of other derived models in terms of FLOP efficiency/costs.
+- Researchers tried out interesting ideas and modifications on Transformers architecture, so when you do research remember to check scalability against flops vs. Vanilla.
+	![[Attachments/other_arch1.png]]![[Attachments/other_arch2.png]]
+	
 ---
-### LLM-Compute Costs
+## LLM-Compute Costs
 
 - Hidden size of (MLP) is usually 4d because of expanding factor of MLP network.
-- LLaMA (s << 6d), so approximately $C = 6ND = 6 * 7  billion * 2  trillion = 8.4 x 10^{22}FLOPs$
+- Llama (s << 6d), so approximately $C = 6ND = 6 * 7  billion * 2  trillion = 8.4 x 10^{22}FLOPs$
 - Empirical performance of model has power-law relationship with each factor:
-	- -log-log correlation between factors.
+	- log-log correlation between factors.
 	-  $N_{opt}(C), D_{opt}(C) = \underset{N,D s.t. FLOPs(N,D)=C} {\arg\min} L(N,D)$
 	- $N_{opt} \propto C^{a}, D_{opt} \propto C^{b}$
 	- $a+b=1$ as $C=6ND$
+	- Researchers tried training different model sizes / number of tokens to find scaling hypotheses 
+		![[Attachments/scaling_hypothesis.png]]
+		- 
 	- which to choose a (more compute to parameters) or b(more compute to tokens):
 		- OpenAI (2020) gives more to parameters.
 		- DeepMind(2022) gives more compute to tokens.
@@ -215,7 +229,7 @@ However, there are other objectives that define the training of the model, for e
 - However, [LLaMA-3](https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md) Using 15T tokens on 8B, 70B parameters model made the performance improvements clear and as announced the models weren't hitting saturation / convergence and 8B model great performance on various benchmarks, with Llam3-8B doing better than Llama2-70B in some cases.
 - The focus on both optimizing compute and FLOPs while increasing quality of training Token Count, where 15T didn't even saturate a 8B parameters model, will be the focus of upcoming foundational models development and research.
 ---
-## Resources:
+# Resources:
 - Lecture 8 video : [Lecture 8](https://www.youtube.com/watch?v=tCgX48cvuw4).
 -  [DUL Berkeley Spring 2024 offering](https://sites.google.com/view/berkeley-cs294-158-sp24/home)
 -  Screenshots from the [Lecture 8 PDF](https://drive.google.com/file/d/13YWiY4LLv_qshkSglpDh2VRnAbBHB6SX/view?usp=drive_link).
