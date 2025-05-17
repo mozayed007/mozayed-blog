@@ -8,6 +8,8 @@ tags:
   - Study-Notes
   - DUL
   - Multimodal
+  - Lecture
+  - Berkeley
 date: 2024-11-23 20:54
 ---
 ## **Lecture 12b: Parallelization**  
