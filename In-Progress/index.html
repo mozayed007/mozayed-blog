@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimi-KDA + DeepSeek-DSA Hybrid Attention</title>
+    <!-- MathJax for Equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --bg-hover: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --text-tertiary: #6e7681;
+            --accent-primary: #58a6ff;
+            --accent-primary-dark: #1f6feb;
+            --accent-secondary: #79c0ff;
+            --accent-success: #3fb950;
+            --accent-warning: #d29922;
+            --accent-danger: #f85149;
+            --border-primary: #30363d;
+            --border-secondary: #21262d;
+            --code-bg: #0d1117;
+            --highlight-bg: #388bfd20;
+            --highlight-border: #58a6ff;
+        }
+        
+        * {
+            box-sizing: border-box;
+            color-scheme: dark;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Monaco', monospace;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border-primary);
+            padding-bottom: 20px;
+            background: linear-gradient(135deg, rgba(88,166,255,0.1) 0%, rgba(79,201,80,0.05) 100%);
+            border-radius: 8px;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .panel {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .panel:hover {
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 32px rgba(88,166,255,0.15);
+        }
+
+        .panel h2 {
+            margin: 0 0 20px 0;
+            font-size: 1.4em;
+            color: var(--accent-secondary);
+            border-bottom: 2px solid var(--accent-primary);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .code-block {
+            background: var(--code-bg);
+            color: var(--text-primary);
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 20px 0;
+            border: 1px solid var(--border-primary);
+            border-left: 4px solid var(--accent-primary);
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .code-block::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        .code-block::-webkit-scrollbar-track {
+            background: var(--bg-tertiary);
+        }
+        
+        .code-block::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 4px;
+        }
+
+        .code-block .keyword { color: #ff7b72; }
+        .code-block .string { color: #a5d6ff; }
+        .code-block .number { color: #79c0ff; }
+        .code-block .comment { color: #7d8590; font-style: italic; }
+        .code-block .function { color: #d2a8ff; }
+        .code-block .decorator { color: #ff7b72; }
+        .code-block .type { color: #ffa657; }
+        .code-block .class-name { color: #ffa657; font-weight: bold; }
+
+        .param-group {
+            background: var(--bg-tertiary);
+            padding: 14px;
+            border-radius: 8px;
+            margin: 12px 0;
+            border-left: 4px solid var(--accent-primary);
+            border: 1px solid var(--border-primary);
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .param-label {
+            font-weight: 600;
+            color: var(--accent-secondary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            letter-spacing: 0.5px;
+        }
+
+        .param-value {
+            font-family: 'Monaco', monospace;
+            background: var(--bg-primary);
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border-secondary);
+            word-break: break-all;
+            color: var(--accent-secondary);
+        }
+
+        .tab-container {
+            border-bottom: 2px solid var(--border-primary);
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab {
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95em;
+            color: var(--text-secondary);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .tab.active {
+            color: var(--accent-secondary);
+            border-bottom-color: var(--accent-primary);
+        }
+
+        .tab:hover {
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Expandable Options */
+        .option-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .option-header {
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-secondary);
+        }
+
+        .option-header:hover {
+            background: var(--bg-hover);
+        }
+
+        .option-title {
+            font-weight: 600;
+            color: var(--accent-secondary);
+        }
+
+        .option-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .option-card.expanded .option-content {
+            padding: 20px;
+            max-height: 2000px; /* Arbitrary large height */
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .option-card.expanded .arrow {
+            transform: rotate(180deg);
+        }
+
+        .math-block {
+            background: var(--bg-primary);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-secondary);
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .file-tree {
+            background: var(--bg-tertiary);
+            padding: 18px;
+            border-radius: 8px;
+            font-family: 'Monaco', monospace;
+            font-size: 0.9em;
+            line-height: 1.7;
+            border: 1px solid var(--border-primary);
+            color: var(--text-secondary);
+        }
+
+        .file-item {
+            padding: 3px 0;
+            margin-left: 20px;
+        }
+
+        .file-item.root {
+            margin-left: 0;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+        
+        .info-box, .success-box, .warning-box {
+            padding: 16px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid var(--border-primary);
+            color: var(--text-primary);
+        }
+
+        .info-box {
+            background: var(--highlight-bg);
+            border-left: 4px solid var(--highlight-border);
+        }
+
+        .success-box {
+            background: rgba(63, 185, 80, 0.1);
+            border-left: 4px solid var(--accent-success);
+        }
+        
+        .warning-box {
+             background: rgba(210, 153, 34, 0.1);
+             border-left: 4px solid var(--accent-warning);
+        }
+
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body style="background: var(--bg-primary);">
+    <div class="container">
+        <div class="header">
+            <h1>🔬 Kimi Delta Attention (KDA) + DeepSeek Sparse Attention (DSA)</h1>
+            <p class="subtitle">Hybrid Transformer Attention Layers - Advanced Implementation & Comparison</p>
+            <p style="font-size: 0.9em; color: var(--text-tertiary); margin-top: 10px;">Based on arXiv:2510.26692 (Kimi Linear) and DeepSeek-V3.2-Exp Architecture</p>
+        </div>
+
+        <div class="grid">
+            <!-- LEFT: KDA -->
+            <div class="panel">
+                <h2>Kimi Delta Attention (KDA)</h2>
+                
+                <div class="info-box">
+                    <strong>Linear Complexity:</strong> \( O(N) \) time & memory<br>
+                    <strong>Core:</strong> Channel-wise gated DeltaNet with DPLR-style decay
+                </div>
+
+                <div class="tab-container">
+                    <button class="tab active" onclick="switchTab(event, 'kda-overview')">Overview</button>
+                    <button class="tab" onclick="switchTab(event, 'kda-code')">Code</button>
+                    <button class="tab" onclick="switchTab(event, 'kda-math')">Math</button>
+                </div>
+
+                <div id="kda-overview" class="tab-content active">
+                    <p><strong>Mechanism:</strong></p>
+                    <ol>
+                        <li><strong>Feature Projection:</strong> Input \( X \) is projected to \( Q, K, V \) and a data-dependent gate \( \gamma \).</li>
+                        <li><strong>Delta Rule Update:</strong> Maintain a recurrent state \( S_t \in \mathbb{R}^{d \times d} \).
+                            <br>Unlike standard Linear Attention, KDA uses a <strong>channel-wise forget gate</strong> \( \gamma_t \in \mathbb{R}^d \) to control memory retention per feature.
+                        </li>
+                        <li><strong>Chunkwise Computation:</strong> Processes tokens in chunks (e.g., 64) to leverage Tensor Cores, balancing recurrence and parallel matrix multiplication.</li>
+                    </ol>
+                    <p><strong>Key Improvement:</strong></p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 8px;">✓ <strong>Finer-grained Gating:</strong> Element-wise control over state decay allows "forgetting" irrelevant context selectively.</li>
+                        <li style="margin-bottom: 8px;">✓ <strong>Hardware Efficiency:</strong> Specialized DPLR (Diagonal Plus Low Rank) kernel formulation.</li>
+                    </ul>
+                </div>
+
+                <div id="kda-math" class="tab-content">
+                    <div class="math-block">
+                        $$ \mathbf{q}_t, \mathbf{k}_t, \mathbf{v}_t, \mathbf{\beta}_t = \text{Proj}(\mathbf{x}_t) $$
+                        $$ \mathbf{g}_t = \sigma(\mathbf{\beta}_t) \quad \text{(Data-Dependent Decay)} $$
+                        $$ \mathbf{S}_t = \mathbf{S}_{t-1} \odot \mathbf{g}_t + \mathbf{k}_t^\top \mathbf{v}_t $$
+                        $$ \mathbf{o}_t = \text{LayerNorm}(\mathbf{q}_t \mathbf{S}_t) $$
+                    </div>
+                    <p style="font-size:0.9em; color:var(--text-secondary)">
+                        * Note: The decay rate $\mathbf{g}_t$ is <strong>data-dependent</strong> (computed from input $x_t$) and applied <strong>channel-wise</strong> (broadcasting across the $D \times D$ state). This differentiates KDA from standard Linear Attention or simple DeltaNet.
+                    </p>
+                </div>
+
+                <div id="kda-code" class="tab-content">
+                    <div class="code-block"><pre><span class="keyword">import</span> <span class="type">torch</span>
+<span class="keyword">import</span> <span class="type">torch.nn</span> <span class="keyword">as</span> <span class="type">nn</span>
+<span class="keyword">import</span> <span class="type">torch.nn.functional</span> <span class="keyword">as</span> <span class="type">F</span>
+
+<span class="decorator">@torch.jit.script</span>
+<span class="keyword">class</span> <span class="class-name">KimiDeltaAttention</span>(nn.Module):
+    <span class="string">"""
+    Corrected KDA: Gated DeltaNet with Data-Dependent Decay
+    Ref: arXiv:2510.26692 (Kimi Linear)
+    """</span>
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>, dim: <span class="type">int</span>, num_heads: <span class="type">int</span> = <span class="number">8</span>, chunk_size: <span class="type">int</span> = <span class="number">64</span>):
+        <span class="keyword">super</span>().__init__()
+        <span class="keyword">self</span>.dim = dim
+        <span class="keyword">self</span>.num_heads = num_heads
+        <span class="keyword">self</span>.head_dim = dim // num_heads
+        <span class="keyword">self</span>.chunk_size = chunk_size
+        
+        <span class="comment"># Projections: Q, K, V, and Beta (Decay/Gate)</span>
+        <span class="comment"># Beta is derived from input x, making it data-dependent</span>
+        <span class="keyword">self</span>.qkv_gate = nn.Linear(dim, <span class="number">3</span> * dim + dim, bias=<span class="keyword">True</span>)
+        <span class="keyword">self</span>.out_proj = nn.Linear(dim, dim)
+        
+    <span class="keyword">def</span> <span class="function">forward</span>(<span class="keyword">self</span>, x: <span class="type">torch.Tensor</span>, state: <span class="type">torch.Tensor</span> = <span class="keyword">None</span>):
+        B, N, D = x.shape
+        H, HD = <span class="keyword">self</span>.num_heads, <span class="keyword">self</span>.head_dim
+        
+        <span class="comment"># 1. Project inputs</span>
+        proj = <span class="keyword">self</span>.qkv_gate(x)
+        q, k, v, beta = torch.split(proj, [D, D, D, D], dim=<span class="number">-1</span>)
+        
+        <span class="comment"># 2. Reshape & Activation</span>
+        q = q.view(B, N, H, HD)
+        k = k.view(B, N, H, HD)
+        v = v.view(B, N, H, HD)
+        <span class="comment"># Decay rate g in (0, 1)</span>
+        g = torch.sigmoid(beta.view(B, N, H, HD)) 
+        
+        <span class="comment"># 3. Initialize State (B, H, D, D)</span>
+        <span class="keyword">if</span> state <span class="keyword">is</span> <span class="keyword">None</span>:
+            state = torch.zeros(B, H, HD, HD, device=x.device)
+            
+        outputs = []
+        
+        <span class="comment"># 4. Chunkwise Recurrence</span>
+        <span class="comment"># (Simplified loop; real impl uses DPLR kernels)</span>
+        <span class="keyword">for</span> t <span class="keyword">in</span> range(N):
+            q_t = q[:, t]
+            k_t = k[:, t]
+            v_t = v[:, t]
+            g_t = g[:, t].unsqueeze(<span class="number">-1</span>) <span class="comment"># Broadcast over last dim</span>
+            
+            <span class="comment"># State Update: S_t = S_{t-1} * g_t + K^T * V</span>
+            state = state * g_t + torch.einsum(<span class="string">'bhd,bhm->bhdm'</span>, k_t, v_t)
+            
+            <span class="comment"># Output: O_t = Q_t * S_t</span>
+            out_t = torch.einsum(<span class="string">'bhd,bhdm->bhm'</span>, q_t, state)
+            outputs.append(out_t)
+            
+        output = torch.stack(outputs, dim=<span class="number">1</span>).reshape(B, N, D)
+        <span class="keyword">return</span> <span class="keyword">self</span>.out_proj(output), state</pre></div>
+                </div>
+            </div>
+
+            <!-- RIGHT: DSA -->
+            <div class="panel">
+                <h2>DeepSeek Sparse Attention (DSA)</h2>
+                
+                <div class="info-box">
+                    <strong>Sparsity:</strong> Top-K Selection (e.g., \( k=64 \))<br>
+                    <strong>Core:</strong> Lightning Indexer (Query-Dependent) + Sparse Gather
+                </div>
+
+                <div class="tab-container">
+                    <button class="tab active" onclick="switchTab(event, 'dsa-overview')">Overview</button>
+                    <button class="tab" onclick="switchTab(event, 'dsa-code')">Code</button>
+                    <button class="tab" onclick="switchTab(event, 'dsa-math')">Math</button>
+                </div>
+
+                <div id="dsa-overview" class="tab-content active">
+                    <p><strong>Mechanism (DeepSeek-V3.2-Exp):</strong></p>
+                    <ol>
+                        <li><strong>Lightning Indexer:</strong> A lightweight attention branch. It projects inputs to compressed/quantized keys (often FP8) to quickly score relevance.</li>
+                        <li><strong>Query-Dependent Scoring:</strong> Unlike static scoring, the indexer computes scores between the <em>current query</em> and <em>all past compressed keys</em>.</li>
+                        <li><strong>Top-K Selection:</strong> Selects the top-k indices with highest scores.</li>
+                        <li><strong>Sparse Attention:</strong> Fetches full-precision KV pairs for these indices and performs standard attention.</li>
+                    </ol>
+                    <div class="warning-box">
+                        <strong>Note:</strong> Real implementations use RoPE in the indexer and specialized kernels (FlashMLA) for efficiency.
+                    </div>
+                </div>
+
+                <div id="dsa-math" class="tab-content">
+                    <div class="math-block">
+                        $$ Q_{\text{idx}}, K_{\text{idx}} = \text{Proj}_{\text{light}}(X) $$
+                        $$ \text{Scores} = \text{RoPE}(Q_{\text{idx}}) \cdot \text{RoPE}(K_{\text{idx}})^\top $$
+                        $$ \mathcal{I} = \text{TopK}(\text{Scores}, k) $$
+                        $$ K_{\text{sparse}} = \text{Gather}(K_{\text{full}}, \mathcal{I}) $$
+                        $$ \text{Attn} = \text{Softmax}\left(\frac{Q K_{\text{sparse}}^\top}{\sqrt{d}}\right) V_{\text{sparse}} $$
+                    </div>
+                </div>
+
+                <div id="dsa-code" class="tab-content">
+                    <div class="code-block"><pre><span class="keyword">class</span> <span class="class-name">DeepSeekSparseAttention</span>(nn.Module):
+    <span class="string">"""
+    Corrected DSA: Query-Dependent Lightning Indexer
+    Ref: DeepSeek-V3.2-Exp Technical Report
+    """</span>
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>, dim: <span class="type">int</span>, num_heads: <span class="type">int</span>, k_sparse: <span class="type">int</span>):
+        <span class="keyword">super</span>().__init__()
+        <span class="keyword">self</span>.k_sparse = k_sparse
+        <span class="keyword">self</span>.num_heads = num_heads
+        
+        <span class="comment"># Main Attention Projections (Full Precision)</span>
+        <span class="keyword">self</span>.q_proj = nn.Linear(dim, dim)
+        <span class="keyword">self</span>.k_proj = nn.Linear(dim, dim)
+        <span class="keyword">self</span>.v_proj = nn.Linear(dim, dim)
+        
+        <span class="comment"># Lightning Indexer (Compressed, e.g., dim/4)</span>
+        <span class="comment"># In practice: uses FP8 and specialized RoPE layout</span>
+        <span class="keyword">self</span>.idx_dim = dim // <span class="number">4</span>
+        <span class="keyword">self</span>.idx_q = nn.Linear(dim, <span class="keyword">self</span>.idx_dim)
+        <span class="keyword">self</span>.idx_k = nn.Linear(dim, <span class="keyword">self</span>.idx_dim)
+
+    <span class="keyword">def</span> <span class="function">apply_rope</span>(<span class="keyword">self</span>, x: <span class="type">torch.Tensor</span>) -> <span class="type">torch.Tensor</span>:
+        <span class="string">"""
+        Rotary Positional Embedding (Placeholder)
+        Crucial for relative position awareness in the indexer.
+        """</span>
+        <span class="comment"># In production, use optimized CUDA kernels</span>
+        <span class="keyword">return</span> x 
+        
+    <span class="keyword">def</span> <span class="function">forward</span>(<span class="keyword">self</span>, x: <span class="type">torch.Tensor</span>):
+        B, N, D = x.shape
+        
+        <span class="comment"># 1. Lightning Indexer Step</span>
+        <span class="comment"># Project to compressed dimension</span>
+        q_idx = <span class="keyword">self</span>.idx_q(x) <span class="comment"># (B, N, D_idx)</span>
+        k_idx = <span class="keyword">self</span>.idx_k(x) 
+        
+        <span class="comment"># Apply RoPE (Crucial for long-context retrieval)</span>
+        q_idx = <span class="keyword">self</span>.apply_rope(q_idx)
+        k_idx = <span class="keyword">self</span>.apply_rope(k_idx)
+        
+        <span class="comment"># Compute scores (B, N, N) - Query vs All Keys</span>
+        scores = torch.bmm(q_idx, k_idx.transpose(<span class="number">1</span>, <span class="number">2</span>))
+        
+        <span class="comment"># 2. Top-K Selection</span>
+        k = min(<span class="keyword">self</span>.k_sparse, N)
+        _, top_indices = torch.topk(scores, k, dim=<span class="number">-1</span>) <span class="comment"># (B, N, k)</span>
+        
+        <span class="comment"># 3. Sparse Attention (FlashMLA Integration)</span>
+        <span class="comment"># In a real setting, we invoke the FlashMLA kernel here to avoid</span>
+        <span class="comment"># materializing the full attention matrix or full KV cache.</span>
+        
+        <span class="comment"># >>> FlashMLA.sparse_attention(q, k, v, top_indices) <<<</span>
+        
+        <span class="comment"># Fallback / Conceptual implementation:</span>
+        Q = <span class="keyword">self</span>.q_proj(x).view(B, N, <span class="keyword">self</span>.num_heads, -1)
+        K = <span class="keyword">self</span>.k_proj(x).view(B, N, <span class="keyword">self</span>.num_heads, -1)
+        V = <span class="keyword">self</span>.v_proj(x).view(B, N, <span class="keyword">self</span>.num_heads, -1)
+        
+        <span class="comment"># Gather K/V using top_indices...</span>
+        <span class="comment"># K_sparse = gather(K, top_indices)</span>
+        <span class="comment"># V_sparse = gather(V, top_indices)</span>
+        
+        <span class="comment"># 4. Sparse Attention</span>
+        <span class="comment"># attn = softmax(Q @ K_sparse.T) @ V_sparse</span>
+        
+        <span class="keyword">return</span> x <span class="comment"># Placeholder return</span></pre></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HYBRID OPTIONS -->
+        <div class="panel">
+            <h2>🚀 Hybrid Integration Options</h2>
+            <p>Click on an option below to see the implementation details and code.</p>
+            
+            <!-- Option 1 -->
+            <div class="option-card" id="opt1">
+                <div class="option-header" onclick="toggleOption('opt1')">
+                    <span class="option-title">Option 1: Sequential Stack (KDA → DSA)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="option-content">
+                    <p><strong>Logic:</strong> First, compress the entire history into a compact state using KDA (Linear). Then, use DSA to retrieve specific details from the <em>processed</em> sequence or a short local window.</p>
+                    <div class="code-block"><pre><span class="keyword">class</span> <span class="class-name">SequentialHybrid</span>(nn.Module):
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>, dim):
+        <span class="keyword">super</span>().__init__()
+        <span class="keyword">self</span>.kda = KimiDeltaAttention(dim)
+        <span class="keyword">self</span>.dsa = DeepSeekSparseAttention(dim, k_sparse=<span class="number">64</span>)
+        <span class="keyword">self</span>.norm = nn.LayerNorm(dim)
+
+    <span class="keyword">def</span> <span class="function">forward</span>(<span class="keyword">self</span>, x, state=<span class="keyword">None</span>):
+        <span class="comment"># 1. Global Context Compression (Linear)</span>
+        res = x
+        x, state = <span class="keyword">self</span>.kda(x, state=state)
+        x = <span class="keyword">self</span>.norm(x + res)
+        
+        <span class="comment"># 2. Local/Sparse Refinement (Sparse)</span>
+        res = x
+        x = <span class="keyword">self</span>.dsa(x)
+        x = <span class="keyword">self</span>.norm(x + res)
+        
+        <span class="keyword">return</span> x, state</pre></div>
+                </div>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="option-card" id="opt2">
+                <div class="option-header" onclick="toggleOption('opt2')">
+                    <span class="option-title">Option 2: Parallel Merge with Gating</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="option-content">
+                    <p><strong>Logic:</strong> Run both mechanisms in parallel. A learned gate decides for each token whether to rely on the global summary (KDA) or specific retrieved tokens (DSA).</p>
+                    <div class="code-block"><pre><span class="keyword">class</span> <span class="class-name">ParallelHybrid</span>(nn.Module):
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>, dim):
+        <span class="keyword">super</span>().__init__()
+        <span class="keyword">self</span>.kda = KimiDeltaAttention(dim)
+        <span class="keyword">self</span>.dsa = DeepSeekSparseAttention(dim)
+        <span class="keyword">self</span>.gate_net = nn.Sequential(
+            nn.Linear(dim, <span class="number">1</span>),
+            nn.Sigmoid()
+        )
+
+    <span class="keyword">def</span> <span class="function">forward</span>(<span class="keyword">self</span>, x, state=<span class="keyword">None</span>):
+        <span class="comment"># Parallel Execution</span>
+        out_kda, state = <span class="keyword">self</span>.kda(x, state=state)
+        out_dsa = <span class="keyword">self</span>.dsa(x)
+        
+        <span class="comment"># Learned Fusion</span>
+        alpha = <span class="keyword">self</span>.gate_net(x) <span class="comment"># (B, N, 1)</span>
+        
+        <span class="comment"># Blend: alpha * KDA + (1-alpha) * DSA</span>
+        out = alpha * out_kda + (<span class="number">1</span> - alpha) * out_dsa
+        <span class="keyword">return</span> out, state</pre></div>
+                </div>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="option-card" id="opt3">
+                <div class="option-header" onclick="toggleOption('opt3')">
+                    <span class="option-title">Option 3: Layer-wise Interleaving (3:1 Ratio)</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="option-content">
+                    <p><strong>Logic:</strong> As recommended in the Kimi Linear paper, interleave KDA layers with DSA/Attention layers. A 3:1 ratio (3 KDA : 1 DSA) provides optimal balance between efficiency and precision.</p>
+                    <div class="code-block"><pre><span class="keyword">class</span> <span class="class-name">LayerWiseHybridModel</span>(nn.Module):
+    <span class="keyword">def</span> <span class="function">__init__</span>(<span class="keyword">self</span>, dim, depth=<span class="number">12</span>):
+        <span class="keyword">super</span>().__init__()
+        <span class="keyword">self</span>.layers = nn.ModuleList()
+        
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(depth):
+            <span class="comment"># Every 4th layer is DSA (Refinement), others KDA (Throughput)</span>
+            <span class="keyword">if</span> (i + <span class="number">1</span>) % <span class="number">4</span> == <span class="number">0</span>:
+                layer = DeepSeekSparseAttention(dim, k_sparse=<span class="number">64</span>)
+            <span class="keyword">else</span>:
+                layer = KimiDeltaAttention(dim)
+            <span class="keyword">self</span>.layers.append(layer)
+
+    <span class="keyword">def</span> <span class="function">forward</span>(<span class="keyword">self</span>, x, state=<span class="keyword">None</span>):
+        <span class="comment"># Note: State management becomes complex with interleaving</span>
+        <span class="comment"># Usually KDA layers pass state, DSA layers ignore it</span>
+        <span class="keyword">for</span> layer <span class="keyword">in</span> <span class="keyword">self</span>.layers:
+            <span class="keyword">if</span> isinstance(layer, KimiDeltaAttention):
+                x, state = layer(x, state)
+            <span class="keyword">else</span>:
+                x = layer(x)
+        <span class="keyword">return</span> x, state</pre></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>📁 Recommended Codebase Structure</h2>
+            <div class="file-tree">
+                <div class="file-item root">hybrid_attention/</div>
+                <div class="file-item">├── attention/</div>
+                <div class="file-item">│   ├── __init__.py</div>
+                <div class="file-item">│   ├── kda.py          <span class="comment"># KimiDeltaAttention (DPLR)</span></div>
+                <div class="file-item">│   ├── dsa.py          <span class="comment"># DeepSeekSparseAttention (FlashMLA)</span></div>
+                <div class="file-item">│   ├── hybrid.py       <span class="comment"># Fusion modules</span></div>
+                <div class="file-item">│   └── kernels.py      <span class="comment"># Triton kernels for chunkwise/sparse ops</span></div>
+                <div class="file-item">├── requirements.txt</div>
+                <div class="file-item">└── README.md</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(event, tabId) {
+            const container = event.target.parentElement.parentElement;
+            const tabs = container.querySelectorAll('.tab');
+            const contents = container.querySelectorAll('.tab-content');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            container.querySelector('#' + tabId).classList.add('active');
+        }
+
+        function toggleOption(id) {
+            const card = document.getElementById(id);
+            card.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
