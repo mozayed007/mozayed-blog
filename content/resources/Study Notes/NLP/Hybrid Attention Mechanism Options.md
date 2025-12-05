@@ -41,9 +41,9 @@ date: 2025-12-05
 
 $$
 \begin{aligned}
-\mathbf{q}_t, \mathbf{k}_t, \mathbf{v}_t, \mathbf{\beta}_t &= \text{Proj}(\mathbf{x}_t) \\
-\mathbf{g}_t &= \sigma(\mathbf{\beta}_t) \quad \text{(Data-Dependent Decay)} \\
-\mathbf{S}_t &= \mathbf{S}_{t-1} \odot \mathbf{g}_t + \mathbf{k}_t^\top \mathbf{v}_t \\
+\mathbf{q}_t, \mathbf{k}_t, \mathbf{v}_t, \mathbf{\beta}_t &= \text{Proj}(\mathbf{x}_t) \\[0.5em]
+\mathbf{g}_t &= \sigma(\mathbf{\beta}_t) && \text{(Data-Dependent Decay)} \\[0.5em]
+\mathbf{S}_t &= \mathbf{S}_{t-1} \odot \mathbf{g}_t + \mathbf{k}_t^\top \mathbf{v}_t \\[0.5em]
 \mathbf{o}_t &= \text{LayerNorm}(\mathbf{q}_t \mathbf{S}_t)
 \end{aligned}
 $$
@@ -135,10 +135,10 @@ class KimiDeltaAttention(nn.Module):
 
 $$
 \begin{aligned}
-Q_{\text{idx}}, K_{\text{idx}} &= \text{Proj}_{\text{light}}(X) \\
-\text{Scores} &= \text{RoPE}(Q_{\text{idx}}) \cdot \text{RoPE}(K_{\text{idx}})^\top \\
-\mathcal{I} &= \text{TopK}(\text{Scores}, k) \\
-K_{\text{sparse}} &= \text{Gather}(K_{\text{full}}, \mathcal{I}) \\
+Q_{\text{idx}}, K_{\text{idx}} &= \text{Proj}_{\text{light}}(X) \\[0.5em]
+\text{Scores} &= \text{RoPE}(Q_{\text{idx}}) \cdot \text{RoPE}(K_{\text{idx}})^\top \\[0.5em]
+\mathcal{I} &= \text{TopK}(\text{Scores}, k) \\[0.5em]
+K_{\text{sparse}} &= \text{Gather}(K_{\text{full}}, \mathcal{I}) \\[0.5em]
 \text{Attn} &= \text{Softmax}\left(\frac{Q K_{\text{sparse}}^\top}{\sqrt{d}}\right) V_{\text{sparse}}
 \end{aligned}
 $$
