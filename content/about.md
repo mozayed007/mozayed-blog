@@ -96,13 +96,6 @@
 [![GitHub Streak](https://streak-stats.demolab.com?user=mozayed007&theme=github-dark-blue&mode=weekly)](https://git.io/streak-stats)
 
 
-<br>
-
-<a href="https://github.com/ryo-ma/github-profile-trophy">
-  <img src="https://github-profile-trophy.vercel.app/?username=mozayed007&row=2&column=4&theme=onedark" alt="GitHub Trophies" width="80%" />
-</a>
-
-</div>
 
 
 ---
@@ -137,4 +130,3 @@ To see all the other badges, are [here](https://www.credly.com/users/mozayed007/
 <!--END_SECTION:badges-->
 
 ---
- 
