@@ -1,6 +1,45 @@
 ---
-title: Welcome to Quartz
+title: Welcome to My Space
+date: 2024-04-19 15:14
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+
+## Check out posts
+
+A **sample** of my posts that represent the categories of content you can find on this blog-site:
+
+- [[blog/index|Blog Posts]]: 
+
+  - [Tools and Tricks: Summary Index](blog/Tools%20and%20Tricks/Summary-Index.md) - A collection of useful tools and tricks for various tasks.
+  - [Resume Tips](blog/Resume%20Tips.md) - Tips and advice on how to create an effective resume.
+  - [Taming my Chaotic Mind](blog/Taming%20my%20Chaotic%20Mind.md) - My personal journey on managing and organizing thoughts.
+  
+- [[resources/index|Resources]]:
+
+  - [Study Notes: Spectrograms](resources/Study%20Notes/Signal%20Processing/Spectrograms.md) - Detailed study notes on the topic of Spectrograms in Signal Processing.
+  - [Study Notes: Transformers](resources/Study%20Notes/NLP/Transformers.md)- Detailed study notes on the topic of Transformers Architecture in Natural Language Processing.
+
+## 👨‍💻 About Me
+
+- Geek, Gamer, Anime/kdrama Appreciator, A cat guy 🐱, More on [[about| About Me]].
+
+## 📚 Blog Posts
+
+Here you'll find a collection of my [[blog/index|Thoughts]], [[projects/index|Experiences]], and [[resources/Study Notes/index|Learning]].
+I write about everything I take notes about, whether experiences I gain throughout my life journey or content I learn from regarding tech, and occasionally about my hobbies and interests.
+
+## 📫 Contact Me
+
+Feel free to reach out to me via email: <s-mohamedzayed@zewailcity.edu.eg> or LinkedIn.
+You can also support me on Ko-fi.
+<p align="center">
+  <a href="https://github.com/mozayed007">
+    <img src="https://img.shields.io/badge/-GitHub-black?style=flat&logo=github&logoColor=white" alt="GitHub Badge">
+  </a>
+  <a href="https://www.linkedin.com/in/mozayed007/">
+    <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white" alt="LinkedIn Badge">
+  </a>
+  <a href="https://ko-fi.com/mozayed007">
+    <img src="https://img.shields.io/badge/-ko--fi-red?style=flat&logo=ko-fi&logoColor=white" alt="ko-fi Badge">
+  </a>
+</p>
