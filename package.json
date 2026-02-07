@@ -105,9 +105,16 @@
     "@types/source-map-support": "^0.5.10",
     "@types/ws": "^8.5.12",
     "@types/yargs": "^17.0.32",
+<<<<<<< HEAD
     "esbuild": "^0.25.4",
     "prettier": "^3.3.3",
     "tsx": "^4.17.0",
     "typescript": "^5.5.4"
+=======
+    "esbuild": "^0.19.9",
+    "prettier": "^3.2.4",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.5"
+>>>>>>> dependabot/npm_and_yarn/typescript-5.4.5
   }
 }
