@@ -1,24 +1,36 @@
 ---
 title: Welcome to My Space
+date: 2024-04-19 15:14
 ---
 
-# Welcome to MoZayed's Blog
+
+## Check out posts
+
+A **sample** of my posts that represent the categories of content you can find on this blog-site:
+
+- [[blog/index|Blog Posts]]: 
+
+  - [Tools and Tricks: Summary Index](blog/Tools%20and%20Tricks/Summary-Index.md) - A collection of useful tools and tricks for various tasks.
+  - [Resume Tips](blog/Resume%20Tips.md) - Tips and advice on how to create an effective resume.
+  - [Taming my Chaotic Mind](blog/Taming%20my%20Chaotic%20Mind.md) - My personal journey on managing and organizing thoughts.
+  
+- [[resources/index|Resources]]:
+
+  - [Study Notes: Spectrograms](resources/Study%20Notes/Signal%20Processing/Spectrograms.md) - Detailed study notes on the topic of Spectrograms in Signal Processing.
+  - [Study Notes: Transformers](resources/Study%20Notes/NLP/Transformers.md)- Detailed study notes on the topic of Transformers Architecture in Natural Language Processing.
 
 ## 👨‍💻 About Me
 
-- 👀 I’m interested in: AI, Machine Learning, Cybersecurity, and Strategic Development Techs (Gartner).
-- 🏓 Hobbies: Anime, MMORPGs, TFT, FPS 🎮.
-- 🌱 I’m currently learning: Machine Learning, AI, NLP, CV, and (Cybersecurity (self study)).
-- 🛠 I've experience in Technical Support, Freelancing, Online Tutoring, Machine / Deep Learning, NLP, Computer Vision and LLMs.
-- 🏫 Senior CIE Undergraduate at UST Zewail City.
+- Geek, Gamer, Anime/kdrama Appreciator, A cat guy 🐱, More on [[about| About Me]].
 
 ## 📚 Blog Posts
 
-Here you'll find a collection of my thoughts, experiences, and learnings. I write about everything I take notes about whether experiences I meet or content I learn from regarding tech, and occasionally about my hobbies and interests.
+Here you'll find a collection of my [[blog/index|Thoughts]], [[projects/index|Experiences]], and [[resources/Study Notes/index|Learning]].
+I write about everything I take notes about, whether experiences I gain throughout my life journey or content I learn from regarding tech, and occasionally about my hobbies and interests.
 
 ## 📫 Contact Me
 
-Feel free to reach out to me via email: <s-mohamedzayed@zewailcity.edu.eg> or LinkedIn. 
+Feel free to reach out to me via email: <s-mohamedzayed@zewailcity.edu.eg> or LinkedIn.
 You can also support me on Ko-fi.
 <p align="center">
   <a href="https://github.com/mozayed007">
