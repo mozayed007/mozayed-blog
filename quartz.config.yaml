@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: mozayed007.github.io/mozayed-blog
+  baseUrl: blog.mo-zayed.com
   ignorePatterns:
     - private
     - templates
