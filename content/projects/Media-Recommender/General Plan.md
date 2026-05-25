@@ -1,12 +1,11 @@
 ---
 title: General Plan
-draft: false
 tags:
   - NLP
   - project
   - recommender
   - content-based-filtering
-date: 2024-03-17 00:44
+date: 2026-05-25
 ---
  ## Initial thoughts
 For my use case, I would recommend using **LlamaIndex**. Here's why:

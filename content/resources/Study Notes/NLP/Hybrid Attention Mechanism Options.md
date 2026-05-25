@@ -1,6 +1,5 @@
 ---
 title: Hybrid Attention Mechanism Options
-draft: false
 tags:
   - NLP
   - Attention

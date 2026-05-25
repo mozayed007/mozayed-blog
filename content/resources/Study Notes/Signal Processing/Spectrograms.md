@@ -1,6 +1,5 @@
 ---
 title: Spectrograms
-draft: false
 tags:
   - Frequency-Time
   - Study-Notes
@@ -44,4 +43,4 @@ In this equation:
 - 💡 The spectrogram is particularly useful for studying time-varying signals that are not perfectly periodic, like audio recordings.
 - 💡 Coding the spectrogram and working with time-frequency diagrams can provide further insights into audio signals and their characteristics.
 
-![[Attachments/Spectrogram.png]]
+![[Spectrogram.png]]

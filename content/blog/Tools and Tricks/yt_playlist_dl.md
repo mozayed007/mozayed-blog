@@ -1,13 +1,12 @@
 ---
 title: YT Downloader
-draft: false
 tags:
   - digital_tools   
   - apps
   - productivity
   - utility
   - yt
-date: 2024-03-16 23:34
+date: 2026-05-25
 ---
 # YT-Playlist Download using yt-dlp cli tool
 

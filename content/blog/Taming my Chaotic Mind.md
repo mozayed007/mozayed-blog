@@ -1,10 +1,9 @@
 ---
 title: Taming My Chaotic Mind
-draft: false
-tags:   
+tags:
   - Career
   - Tips
-date: 2024-03-16 23:34
+date: 2026-05-25
 ---
 # How to keep Up with the chaos
 ---

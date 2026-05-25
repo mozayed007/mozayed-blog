@@ -1,6 +1,5 @@
 ---
 title: Sponsor ADs
-draft: false
 tags:
   - digital_tools   
   - apps
@@ -8,7 +7,7 @@ tags:
   - utility
   - ad
   - browser
-date: 2024-03-16 23:34
+date: 2026-05-25
 ---
 # SponsorBlock: A Professional Guide
 

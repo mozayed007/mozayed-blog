@@ -1,13 +1,12 @@
 ---
 title: Organizing Browser
-draft: false
 tags:
   - digital_tools   
   - apps
   - productivity
   - utility
   - browser
-date: 2024-03-16 23:34
+date: 2026-05-25
 ---
 # Toby Browser Extension: A Professional Guide
 

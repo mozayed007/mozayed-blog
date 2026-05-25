@@ -1,12 +1,11 @@
 ---
 title: Awesome Digital Tools and Tricks
-draft: false
 tags:
   - digital_tools   
   - apps
   - productivity
   - utility
-date: 2024-03-16 23:34
+date: 2026-05-25
 ---
 
 # Tips & Tricks <img src="https://cdn.7tv.app/emote/60dd13426ef5a66f4134f804/4x.webp" alt="EZ"  width="40" />

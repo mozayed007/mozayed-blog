@@ -1,6 +1,5 @@
 ---
 title: Data Science Template
-draft: false
 tags:
   - digital_tools   
   - apps
@@ -9,7 +8,7 @@ tags:
   - data_science
   - template
   - project
-date: 2024-03-16 23:34
+date: 2026-05-25
 ---
 - # Data Science Project Template Guide
 

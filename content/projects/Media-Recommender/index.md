@@ -1,6 +1,5 @@
 ---
 title: Media Recommender
-draft: false
 description: Content-Based filtering Anime Recommendation System
 tags:
   - NLP
@@ -8,5 +7,5 @@ tags:
   - Recommender-System
   - Anime
   - Experiments
-date: 2024-03-17 00:44
+date: 2026-05-25
 ---

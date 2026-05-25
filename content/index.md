@@ -1,45 +1,44 @@
 ---
-title: Welcome to My Space
-date: 2024-04-19 15:14
+title: "Welcome"
+description: "MoZayed's personal space — blog, projects, resources, and more."
+date: 2026-05-25
 ---
 
+# 🌌 Welcome to My Space
 
-## Check out posts
+Hey, I'm **MoZayed** — a Research Engineer at **Sprints AI**.
 
-A **sample** of my posts that represent the categories of content you can find on this blog-site:
+This site is my digital garden: a place for [[blog/index|thoughts]], [[projects/index|experiments]], [[resources/index|study notes]], and everything in between. I write about tech I’m learning, tools I love, and lessons from transitioning into industry life.
 
-- [[blog/index|Blog Posts]]: 
+## 👋 About Me
 
-  - [Tools and Tricks: Summary Index](blog/Tools%20and%20Tricks/Summary-Index.md) - A collection of useful tools and tricks for various tasks.
-  - [Resume Tips](blog/Resume%20Tips.md) - Tips and advice on how to create an effective resume.
-  - [Taming my Chaotic Mind](blog/Taming%20my%20Chaotic%20Mind.md) - My personal journey on managing and organizing thoughts.
-  
-- [[resources/index|Resources]]:
+Geek, gamer, anime & K-drama appreciator, and a certified cat guy 🐱.
 
-  - [Study Notes: Spectrograms](resources/Study%20Notes/Signal%20Processing/Spectrograms.md) - Detailed study notes on the topic of Spectrograms in Signal Processing.
-  - [Study Notes: Transformers](resources/Study%20Notes/NLP/Transformers.md)- Detailed study notes on the topic of Transformers Architecture in Natural Language Processing.
+Curious what I’m up to? Head over to [[about|About Me]] for the full story.
 
-## 👨‍💻 About Me
+## 📦 What You'll Find Here
 
-- Geek, Gamer, Anime/kdrama Appreciator, A cat guy 🐱, More on [[about| About Me]].
+| Section | Description |
+|---------|-------------|
+| [[blog/index\|Blog Posts]] | Thoughts, tips, and ramblings about tech, tools, and life. |
+| [[projects/index\|Projects]] | Side projects, experiments, and hands-on experiences. |
+| [[resources/index\|Resources]] | Study notes, guides, and tutorials on ML, NLP, GPU optimization, and signal processing. |
 
-## 📚 Blog Posts
+## ⭐ Recent & Featured
 
-Here you'll find a collection of my [[blog/index|Thoughts]], [[projects/index|Experiences]], and [[resources/Study Notes/index|Learning]].
-I write about everything I take notes about, whether experiences I gain throughout my life journey or content I learn from regarding tech, and occasionally about my hobbies and interests.
+- [[blog/Tools and Tricks/index\|Tools and Tricks]] — Productivity tools, browser extensions, terminal tricks, and workflow optimizations.
+- [[blog/Resume Tips\|Resume Tips]] — ATS-friendly resume advice from a Big Tech hiring manager's perspective.
+- [[resources/Study Notes/CS336-LLM from Scratch-Stanford-Sp25/index\|CS336: LLM from Scratch (Stanford SP25)]] — Notes from Stanford's course on building LLMs from the ground up.
+- [[projects/Media-Recommender/index\|Media Recommender]] — A hybrid recommendation system combining semantic similarity with categorical features.
 
-## 📫 Contact Me
+## 📫 Get in Touch
 
-Feel free to reach out to me via email: <s-mohamedzayed@zewailcity.edu.eg> or LinkedIn.
-You can also support me on Ko-fi.
-<p align="center">
-  <a href="https://github.com/mozayed007">
-    <img src="https://img.shields.io/badge/-GitHub-black?style=flat&logo=github&logoColor=white" alt="GitHub Badge">
-  </a>
-  <a href="https://www.linkedin.com/in/mozayed007/">
-    <img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white" alt="LinkedIn Badge">
-  </a>
-  <a href="https://ko-fi.com/mozayed007">
-    <img src="https://img.shields.io/badge/-ko--fi-red?style=flat&logo=ko-fi&logoColor=white" alt="ko-fi Badge">
-  </a>
-</p>
+| Platform | Link |
+|----------|------|
+| 📧 Email | [moh.z.ahmed007@gmail.com](mailto:moh.z.ahmed007@gmail.com) |
+| 🌐 Portfolio | [portfolio.mo-zayed.com](https://portfolio.mo-zayed.com) |
+| 🐦 X / Twitter | [x.com/MoZayed007](https://x.com/MoZayed007) |
+| 💼 LinkedIn | [linkedin.com/in/mozayed007](https://linkedin.com/in/mozayed007) |
+| 🐙 GitHub | [github.com/mozayed007](https://github.com/mozayed007) |
+
+Feel free to reach out — I'm always happy to chat about AI, engineering, or the latest anime season.

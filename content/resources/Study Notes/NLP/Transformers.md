@@ -1,12 +1,11 @@
 ---
 title: Transformer
-draft: false
 tags:
   - NLP
   - LLM
   - Transformers
   - Study-Notes
-date: 2024-03-17 00:45
+date: 2026-05-25
 ---
 
 # Attention Is All You Need-Transformer
@@ -15,7 +14,7 @@ date: 2024-03-17 00:45
 
 ## Model
 
-![[Attachments/TransformerModel.png]]
+![[TransformerModel.png]]
 
 - A Transformer is an encoder-decoder model architecture that uses the attention mechanism.
 - Massive advantage over RNN based encoder-decoder architecture since it allows to:

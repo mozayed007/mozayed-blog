@@ -1,11 +1,10 @@
 ---
 title: Resume Tips
-draft: false
-tags:   
+tags:
   - Career
   - Tips
   - Resume
-date: 2024-03-16 23:34
+date: 2026-05-25
 ---
 # Zero Experience Resume Tips From a Big Tech Hiring Manager
 

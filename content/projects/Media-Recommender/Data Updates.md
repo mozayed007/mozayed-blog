@@ -1,12 +1,11 @@
 ---
 title: Data Overview
-draft: false
 tags:
   - NLP
   - project
   - recommender
   - content-based-filtering
-date: 2024-03-17 00:44
+date: 2026-05-25
 ---
 
 # Data Management - Initial thoughts

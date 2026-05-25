@@ -1,13 +1,12 @@
 ---
 title: Terminal Multiplexing
-draft: false
 tags:
   - digital_tools   
   - apps
   - productivity
   - utility
   - linux
-date: 2024-03-16 23:34
+date: 2026-05-25
 ---
 # Tmux Guide
 

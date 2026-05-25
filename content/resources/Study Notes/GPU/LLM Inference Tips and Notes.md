@@ -1,6 +1,5 @@
 ---
 title: LLM Inference Tips and Optimization
-draft: false
 tags:
   - NLP
   - Attention

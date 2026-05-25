@@ -1,9 +1,13 @@
 ---
-title: Side Projects
-draft: false
-tags:
-date: 2024-03-17 00:44
+title: "Projects"
+description: "Side projects, experiments, and hands-on experiences."
+date: 2026-05-25
 ---
 
+# 🛠️ Projects
 
-##  This is where my dusty side-projects, experiments and experiences R.I.P.
+A collection of side projects, experiments, and hands-on experiences.
+
+## Featured
+
+- [[projects/Media-Recommender/index\|Media Recommender]] — A hybrid media recommendation system combining semantic similarity (LlamaIndex) with categorical features via Streamlit.
