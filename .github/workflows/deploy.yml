@@ -47,10 +47,10 @@ jobs:
         run: bun install
 
       - name: Install Quartz plugins
-        run: bunx quartz plugin install
+        run: bun run quartz plugin install
 
       - name: Build Quartz
-        run: bunx quartz build
+        run: bun run quartz build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
