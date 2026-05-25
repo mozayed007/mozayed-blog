@@ -40,19 +40,25 @@ title: About Me
 
 ### 🔥 ML / DL Frameworks & Libraries
 
-![ML/DL Frameworks](https://skillicons.dev/icons?i=pytorch,tensorflow,sklearn,pandas,numpy)
+![ML/DL Frameworks](https://skillicons.dev/icons?i=pytorch,tensorflow,scikitlearn)
+
+*Plus: Pandas · NumPy · Matplotlib · Jupyter*
 
 ### 🤖 Modern AI Stack (LLMs, RAG & Agents)
 
-![Modern AI Stack](https://skillicons.dev/icons?i=openai,langchain)
+*OpenAI API · LangChain · LlamaIndex · Qdrant · ChromaDB · vLLM · SGLang · HuggingFace Transformers*
 
 ### ⚡ Backend & Orchestration
 
-![Backend & Orchestration](https://skillicons.dev/icons?i=fastapi,redis,celery)
+![Backend](https://skillicons.dev/icons?i=fastapi,redis)
+
+*Plus: Celery · RabbitMQ · REST APIs · WebSockets*
 
 ### ☁️ Cloud, DevOps & Databases
 
-![Cloud, DevOps & Databases](https://skillicons.dev/icons?i=aws,gcp,azure,docker,postgres,git,github)
+![Cloud & DevOps](https://skillicons.dev/icons?i=aws,gcp,azure,docker,postgres,git,github)
+
+*Plus: Kubernetes · Terraform · CI/CD · Nginx · MinIO*
 
 ---
 
@@ -79,7 +85,9 @@ title: About Me
 
 ## 🕛 WakaTime
 
-![WakaTime Stats](https://github-readme-stats.vercel.app/api/wakatime?username=mozayed007)
+> 🚧 Live coding stats are available on my [WakaTime dashboard](https://wakatime.com/@mozayed007).
+>
+> [View detailed stats →](https://wakatime.com/share/@mozayed007/59f67f85-010a-4267-a9e6-50a27326c520.svg)
 
 ---
 
