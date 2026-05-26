@@ -85,9 +85,7 @@ title: About Me
 
 ## 🕛 WakaTime
 
-> 🚧 Live coding stats are available on my [WakaTime dashboard](https://wakatime.com/@mozayed007).
->
-> [View detailed stats →](https://wakatime.com/share/@mozayed007/59f67f85-010a-4267-a9e6-50a27326c520.svg)
+[![wakatime](https://wakatime.com/badge/user/9346b21b-394f-4c0b-84fa-45c6f0321a29.svg)](https://wakatime.com/@9346b21b-394f-4c0b-84fa-45c6f0321a29)
 
 ---
 
