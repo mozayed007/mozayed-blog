@@ -28,7 +28,7 @@ Curious what I’m up to? Head over to [[about|About Me]] for the full story.
 
 - [[blog/Tools and Tricks/index\|Tools and Tricks]] — Productivity tools, browser extensions, terminal tricks, and workflow optimizations.
 - [[blog/Resume Tips\|Resume Tips]] — ATS-friendly resume advice from a Big Tech hiring manager's perspective.
-- [[resources/Study Notes/CS336-LLM from Scratch-Stanford-Sp25/index\|CS336: LLM from Scratch (Stanford SP25)]] — Notes from Stanford's course on building LLMs from the ground up.
+- [[content/resources/Study Notes/CS336-LLM from Scratch-Stanford/index\|CS336: LLM from Scratch (Stanford SP25)]] — Notes from Stanford's course on building LLMs from the ground up.
 - [[projects/Media-Recommender/index\|Media Recommender]] — A hybrid recommendation system combining semantic similarity with categorical features.
 
 ## 📫 Get in Touch

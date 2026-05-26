@@ -9,7 +9,7 @@ tags:
   - DUL
   - Multimodal
   - Lecture
-  - Berkeley
+  - UC-Berkley
 date: 2024-11-23 20:54
 ---
 ## **Lecture 12b: Parallelization**  

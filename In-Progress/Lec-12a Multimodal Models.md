@@ -8,8 +8,8 @@ tags:
   - Study-Notes
   - DUL
   - Multimodal
-  - Berkeley
   - Lecture
+  - UC-Berkley
 date: 2024-11-23 20:54
 ---
 ## **Lecture 12a: Multimodal Models**  
