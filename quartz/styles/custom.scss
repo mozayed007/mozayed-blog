@@ -6,7 +6,7 @@
 // =============================================================================
 
 :root {
-  --light: #0a0a0a;
+  --light: #050510;
   --lightgray: #141414;
   --gray: #555555;
   --darkgray: #e5e5e5;
@@ -63,10 +63,165 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: var(--light);
+  background-image:
+    radial-gradient(ellipse at 15% 50%, rgba(88, 28, 135, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 15%, rgba(30, 58, 138, 0.05) 0%, transparent 45%),
+    radial-gradient(ellipse at 55% 85%, rgba(20, 80, 90, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(10, 10, 30, 0.3) 0%, transparent 70%);
   font-family: var(--bodyFont);
   color: var(--darkgray);
   line-height: 1.7;
   text-wrap: pretty;
+}
+
+// =============================================================================
+// Outer Space Background — Stars, Nebula, Shooting Stars
+// =============================================================================
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background-image: none;
+  background-color: transparent;
+  box-shadow:
+    12vw  8vh 0 0.5px rgba(255,255,255,0.5),
+    25vw 18vh 0 0.3px rgba(255,255,255,0.3),
+    42vw  5vh 0 0.7px rgba(255,255,255,0.6),
+    58vw 28vh 0 0.4px rgba(255,255,255,0.4),
+    73vw 12vh 0 0.6px rgba(255,255,255,0.55),
+    88vw 22vh 0 0.3px rgba(255,255,255,0.35),
+     5vw 35vh 0 0.5px rgba(255,255,255,0.45),
+    18vw 48vh 0 0.8px rgba(255,255,255,0.65),
+    33vw 42vh 0 0.3px rgba(255,255,255,0.3),
+    48vw 55vh 0 0.5px rgba(255,255,255,0.5),
+    62vw 38vh 0 0.6px rgba(255,255,255,0.5),
+    78vw 52vh 0 0.4px rgba(255,255,255,0.4),
+    92vw 45vh 0 0.7px rgba(255,255,255,0.6),
+    15vw 62vh 0 0.3px rgba(255,255,255,0.3),
+    28vw 72vh 0 0.5px rgba(255,255,255,0.5),
+    45vw 68vh 0 0.4px rgba(255,255,255,0.4),
+    55vw 78vh 0 0.6px rgba(255,255,255,0.55),
+    70vw 65vh 0 0.3px rgba(255,255,255,0.3),
+    85vw 75vh 0 0.8px rgba(255,255,255,0.7),
+    95vw 68vh 0 0.4px rgba(255,255,255,0.35),
+     8vw 82vh 0 0.5px rgba(255,255,255,0.45),
+    22vw 88vh 0 0.3px rgba(255,255,255,0.3),
+    38vw 92vh 0 0.6px rgba(255,255,255,0.5),
+    52vw 85vh 0 0.4px rgba(255,255,255,0.4),
+    68vw 92vh 0 0.7px rgba(255,255,255,0.6),
+    82vw 88vh 0 0.3px rgba(255,255,255,0.35),
+    93vw 82vh 0 0.5px rgba(255,255,255,0.5),
+    10vw 95vh 0 0.4px rgba(255,255,255,0.4),
+    35vw  3vh 0 0.3px rgba(255,255,255,0.3),
+    50vw 15vh 0 0.5px rgba(255,255,255,0.45),
+    65vw  8vh 0 0.6px rgba(255,255,255,0.5),
+    80vw 32vh 0 0.4px rgba(255,255,255,0.4),
+    90vw 58vh 0 0.3px rgba(255,255,255,0.3),
+    20vw 32vh 0 0.7px rgba(255,255,255,0.6),
+    35vw 58vh 0 0.5px rgba(255,255,255,0.5),
+    60vw 52vh 0 0.3px rgba(255,255,255,0.3),
+    75vw 38vh 0 0.6px rgba(255,255,255,0.55),
+    88vw 55vh 0 0.4px rgba(255,255,255,0.4),
+     3vw 15vh 0 0.5px rgba(255,255,255,0.45),
+    16vw 28vh 0 0.3px rgba(255,255,255,0.3),
+    30vw 22vh 0 0.6px rgba(255,255,255,0.5),
+    44vw 35vh 0 0.4px rgba(255,255,255,0.4),
+    58vw 42vh 0 0.7px rgba(255,255,255,0.6),
+    72vw 58vh 0 0.3px rgba(255,255,255,0.3),
+    86vw 42vh 0 0.5px rgba(255,255,255,0.5),
+     7vw 72vh 0 0.4px rgba(255,255,255,0.4),
+    22vw 65vh 0 0.6px rgba(255,255,255,0.55),
+    38vw 78vh 0 0.3px rgba(255,255,255,0.3),
+    53vw 62vh 0 0.5px rgba(255,255,255,0.5),
+    67vw 72vh 0 0.7px rgba(255,255,255,0.6),
+    82vw 62vh 0 0.4px rgba(255,255,255,0.4),
+    96vw 72vh 0 0.3px rgba(255,255,255,0.3),
+    14vw  5vh 0 0.6px rgba(255,255,255,0.5),
+    29vw 12vh 0 0.4px rgba(255,255,255,0.4),
+    43vw 25vh 0 0.3px rgba(255,255,255,0.3),
+    57vw 18vh 0 0.5px rgba(255,255,255,0.45),
+    71vw 25vh 0 0.7px rgba(255,255,255,0.6),
+    84vw 15vh 0 0.4px rgba(255,255,255,0.4),
+    97vw  8vh 0 0.5px rgba(255,255,255,0.5),
+    11vw 42vh 0 0.3px rgba(255,255,255,0.3),
+    26vw 38vh 0 0.6px rgba(255,255,255,0.5),
+    41vw 48vh 0 0.4px rgba(255,255,255,0.4),
+    56vw 32vh 0 0.5px rgba(255,255,255,0.45),
+    71vw 48vh 0 0.3px rgba(255,255,255,0.3),
+    85vw 35vh 0 0.7px rgba(255,255,255,0.6),
+     2vw 55vh 0 0.4px rgba(255,255,255,0.4),
+    17vw 55vh 0 0.5px rgba(255,255,255,0.5),
+    32vw 65vh 0 0.3px rgba(255,255,255,0.3),
+    47vw 75vh 0 0.6px rgba(255,255,255,0.55),
+    63vw 68vh 0 0.4px rgba(255,255,255,0.4),
+    77vw 82vh 0 0.5px rgba(255,255,255,0.5),
+    91vw 78vh 0 0.3px rgba(255,255,255,0.3),
+    24vw 92vh 0 0.7px rgba(255,255,255,0.6),
+    39vw 85vh 0 0.4px rgba(255,255,255,0.4),
+    54vw 95vh 0 0.5px rgba(255,255,255,0.5),
+    69vw 88vh 0 0.3px rgba(255,255,255,0.3),
+    84vw 95vh 0 0.6px rgba(255,255,255,0.55),
+    98vw 92vh 0 0.4px rgba(255,255,255,0.4),
+     6vw  2vh 0 0.5px rgba(255,255,255,0.45),
+    21vw  8vh 0 0.3px rgba(255,255,255,0.3),
+    36vw 18vh 0 0.6px rgba(255,255,255,0.5),
+    51vw  2vh 0 0.4px rgba(255,255,255,0.4),
+    66vw 35vh 0 0.7px rgba(255,255,255,0.6),
+    81vw 45vh 0 0.3px rgba(255,255,255,0.3),
+    96vw 28vh 0 0.5px rgba(255,255,255,0.5);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.1) 40%, transparent 60%),
+    linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.05) 35%, transparent 55%);
+  background-size: 90px 1px, 65px 1px;
+  background-position: -100px -100px, -100px -100px;
+  background-repeat: no-repeat;
+  animation: shooting-stars 12s ease-in-out infinite;
+}
+
+@keyframes shooting-stars {
+  0% {
+    background-position: -100px -100px, -100px -100px;
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  6% {
+    background-position: 25vw 15vh, 65vw 45vh;
+    opacity: 1;
+  }
+  8% {
+    background-position: 35vw 25vh, 75vw 55vh;
+    opacity: 0;
+  }
+  9% {
+    background-position: -100px -100px, -100px -100px;
+    opacity: 0;
+  }
+  100% {
+    background-position: -100px -100px, -100px -100px;
+    opacity: 0;
+  }
 }
 
 ::selection {
@@ -871,71 +1026,77 @@ tr {
 }
 
 // =============================================================================
-// Note Properties
+// Note Properties — Subtle overrides on top of plugin defaults
 // =============================================================================
 
 .note-properties {
   background: var(--surface);
-  border: 1px solid var(--lightgray);
+  border-color: var(--lightgray);
   border-radius: var(--radius-lg);
-  padding: 1rem;
   margin-bottom: 1rem;
-  overflow: hidden;
 
-  .note-properties-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    padding: 0;
-    color: var(--dark);
-    font-size: 0.9rem;
-    font-weight: 600;
-    user-select: none;
-    min-height: 32px;
+  &[open] > .note-properties-header {
+    border-bottom-color: var(--lightgray);
   }
 
-  .note-properties-title {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 0.8rem;
-    opacity: 0.7;
+  .note-properties-header {
+    color: var(--dark);
+    padding: 0.5rem 1rem;
+    transition: background-color var(--transition-fast);
+
+    &:hover {
+      background: var(--accent-cool-dim);
+    }
+
+    &::before {
+      border-color: var(--darkgray);
+    }
   }
 
   .note-properties-count {
-    background: var(--surface-elevated);
-    border-radius: var(--radius-pill);
-    padding: 0.1rem 0.5rem;
-    font-size: 0.75rem;
     color: var(--gray);
     font-variant-numeric: tabular-nums;
   }
 
-  .note-properties-table {
-    width: 100%;
-    margin-top: 0.75rem;
-    border-collapse: separate;
-    border-spacing: 0;
+  .note-properties-row {
+    border-bottom-color: var(--lightgray);
+  }
 
-    td {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--lightgray);
-      font-size: 0.9rem;
+  .note-properties-key {
+    color: var(--gray);
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
 
-      &:first-child {
-        color: var(--gray);
-        font-weight: 500;
-        padding-right: 1rem;
-        white-space: nowrap;
+  .note-properties-value {
+    color: var(--darkgray);
+    font-size: 0.9rem;
+  }
+
+  .note-properties-empty {
+    color: var(--gray);
+    font-style: italic;
+  }
+
+  .note-properties-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+
+    a {
+      background: var(--surface-elevated);
+      border: 1px solid var(--lightgray);
+      border-radius: var(--radius-pill);
+      padding: 0.1rem 0.6rem;
+      font-size: 0.8rem;
+      color: var(--darkgray);
+      transition: border-color var(--transition-fast),
+                  color var(--transition-fast);
+
+      &:hover {
+        border-color: var(--accent-cool);
+        color: var(--accent-cool);
       }
-
-      &:last-child {
-        color: var(--darkgray);
-      }
-    }
-
-    tr:last-child td {
-      border-bottom: none;
     }
   }
 }
@@ -1372,6 +1533,14 @@ article {
   .note-properties {
     margin-bottom: 1rem;
   }
+
+  body::before {
+    opacity: 0.6;
+  }
+
+  body::after {
+    display: none;
+  }
 }
 
 @media all and ($tablet) {
@@ -1408,6 +1577,11 @@ article {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  body::after {
+    animation: none;
+    background-image: none;
   }
 
   blockquote:hover {
