@@ -14,7 +14,7 @@ date: 2026-05-25
 
 ## Model
 
-![[TransformerModel.png]]
+![[assets/transformer-architecture.png]]
 
 - A Transformer is an encoder-decoder model architecture that uses the attention mechanism.
 - Massive advantage over RNN based encoder-decoder architecture since it allows to:
