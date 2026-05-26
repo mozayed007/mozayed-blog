@@ -1,3 +1,1507 @@
+@use "sass:map";
 @use "./variables.scss" as *;
+@use "sass:color";
 
-// put your custom CSS here!
+// =============================================================================
+// TOKYO NIGHT WARM — Modern Dark Aesthetic
+// Design Principles: Rounded, Animated, Human-Centered
+// =============================================================================
+
+// =============================================================================
+// A. Design Tokens & CSS Variables
+// =============================================================================
+
+:root {
+  // Warmed-up Tokyo Night Base
+  --light: #0f172a;
+  --lightgray: #1e293b;
+  --gray: #475569;
+  --darkgray: #94a3b8;
+  --dark: #f1f5f9;
+
+  // Accent Family — Cool Blue + Warm Amber
+  --secondary: #60a5fa;
+  --tertiary: #f59e0b;
+  --highlight: rgba(96, 165, 250, 0.12);
+  --textHighlight: rgba(245, 158, 11, 0.25);
+
+  // Extended Surface Tokens
+  --surface: #1e293b;
+  --surface-elevated: #334155;
+  --surface-deep: #0b1120;
+  --accent-warm: #f59e0b;
+  --accent-cool: #60a5fa;
+  --accent-cool-dim: rgba(96, 165, 250, 0.08);
+  --glow-blue: rgba(96, 165, 250, 0.2);
+  --glow-amber: rgba(245, 158, 11, 0.15);
+
+  // Radius Scale — Concentric Principle
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  // Shadow Scale — Layered transparent shadows
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 0 1px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45), 0 0 1px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 2px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px var(--glow-blue), 0 0 40px var(--glow-blue);
+  --shadow-warm-glow: 0 0 20px var(--glow-amber);
+
+  // Timing — Easing curves for interruptible animations
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.2, 0, 0, 1);
+  --transition-fast: 150ms var(--ease-out-quart);
+  --transition-base: 250ms var(--ease-out-expo);
+  --transition-slow: 400ms var(--ease-out-expo);
+}
+
+// =============================================================================
+// B. Global Foundation
+// =============================================================================
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+  text-size-adjust: none;
+  overflow-x: hidden;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media all and ($mobile) {
+    scroll-padding-top: 3rem;
+  }
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--light);
+  font-family: var(--bodyFont);
+  color: var(--darkgray);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+// Selection — Warm amber tint
+::selection {
+  background: rgba(245, 158, 11, 0.25);
+  color: var(--dark);
+}
+
+// Scrollbar — Thin, theme-aware
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray) transparent;
+}
+
+// =============================================================================
+// C. Typography Polish
+// =============================================================================
+
+article {
+  > h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    color: var(--dark);
+    text-wrap: balance;
+
+    @media all and ($mobile) {
+      font-size: 1.75rem;
+      margin-top: 2rem;
+    }
+  }
+
+  > h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+    text-wrap: balance;
+
+    @media all and ($mobile) {
+      font-size: 1.35rem;
+    }
+  }
+
+  > h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    line-height: 1.75;
+    font-size: 1.05rem;
+    text-wrap: pretty;
+  }
+
+  p > strong {
+    color: var(--dark);
+    font-weight: 600;
+  }
+
+  // Staggered list entrance
+  li {
+    animation: fadeInUp 0.4s var(--ease-out-expo) backwards;
+    animation-delay: calc(var(--item-index, 0) * 50ms);
+  }
+}
+
+h1, h2, h3, h4, h5, h6, thead {
+  font-family: var(--headerFont);
+  color: var(--dark);
+  font-weight: revert;
+  margin-bottom: 0;
+}
+
+// =============================================================================
+// D. Rounded Corners — Concentric Radius Principle
+// =============================================================================
+
+img,
+video,
+audio,
+pre,
+code:not(pre > code),
+blockquote,
+figure,
+.table-container > table,
+input[type="checkbox"],
+.popover-inner,
+.search > input,
+.toc,
+.explorer li,
+.backlinks li,
+footer .footer-links a {
+  border-radius: var(--radius-md);
+}
+
+// Concentric: parent radius = child radius + padding
+pre {
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+
+  > code {
+    border-radius: var(--radius-md);
+  }
+}
+
+.sidebar {
+  border-radius: var(--radius-xl);
+}
+
+// =============================================================================
+// E. Links — Signature Hover Effects
+// =============================================================================
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  position: relative;
+  font-weight: 500;
+
+  &:hover {
+    color: var(--accent-warm);
+  }
+
+  // Internal links: animated underline + subtle pill on hover
+  &.internal {
+    background: transparent;
+    border-bottom: 2px solid var(--highlight);
+    border-radius: 0;
+    padding: 0;
+    line-height: inherit;
+    transition:
+      color var(--transition-fast),
+      background-color var(--transition-base),
+      border-color var(--transition-base),
+      border-radius var(--transition-base),
+      padding var(--transition-base),
+      margin var(--transition-base);
+
+    &:hover {
+      background: var(--highlight);
+      border-bottom-color: var(--accent-cool);
+      border-radius: var(--radius-sm);
+      padding: 0.1em 0.3em;
+      margin: 0 -0.3em;
+    }
+
+    &.broken {
+      color: var(--secondary);
+      opacity: 0.4;
+      transition: opacity var(--transition-fast);
+      border-bottom: none;
+
+      &:hover {
+        opacity: 0.6;
+        background: rgba(239, 68, 68, 0.08);
+      }
+    }
+
+    &:has(> img) {
+      background-color: transparent;
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+      border-bottom: none;
+    }
+
+    &.tag-link::before {
+      content: "#";
+      color: var(--accent-warm);
+      opacity: 0.7;
+    }
+  }
+
+  // External links: arrow indicator
+  &.external {
+    .external-icon {
+      height: 1ex;
+      margin: 0 0.15em;
+      transition: transform var(--transition-fast);
+
+      > path {
+        fill: var(--dark);
+      }
+    }
+
+    &:hover .external-icon {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+// =============================================================================
+// F. Code Blocks & Inline Code
+// =============================================================================
+
+code {
+  font-size: 0.9em;
+  color: var(--accent-cool);
+  font-family: var(--codeFont);
+  border-radius: var(--radius-sm);
+  padding: 0.15em 0.35em;
+  background: var(--surface);
+  border: 1px solid var(--lightgray);
+  font-variant-numeric: tabular-nums;
+}
+
+pre {
+  font-family: var(--codeFont);
+  border: 1px solid var(--surface-elevated);
+  background: var(--surface-deep);
+  box-shadow: var(--shadow-md);
+  overflow-x: auto;
+  position: relative;
+
+  &:has(> code.mermaid) {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  > code {
+    background: none;
+    padding: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    counter-reset: line;
+    counter-increment: line 0;
+    display: grid;
+    padding: 0.5rem 0;
+    overflow-x: auto;
+    border: none;
+
+    & [data-highlighted-chars] {
+      background-color: var(--accent-cool-dim);
+      border-radius: var(--radius-sm);
+    }
+
+    & > [data-line] {
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      border-left: 3px solid transparent;
+      transition: background-color var(--transition-fast);
+
+      &[data-highlighted-line] {
+        background-color: var(--accent-cool-dim);
+        border-left: 3px solid var(--accent-cool);
+      }
+
+      &::before {
+        content: counter(line);
+        counter-increment: line;
+        width: 1.5rem;
+        margin-right: 1rem;
+        display: inline-block;
+        text-align: right;
+        color: var(--gray);
+        font-variant-numeric: tabular-nums;
+      }
+    }
+
+    &[data-line-numbers-max-digits="2"] > [data-line]::before {
+      width: 2rem;
+    }
+
+    &[data-line-numbers-max-digits="3"] > [data-line]::before {
+      width: 3rem;
+    }
+  }
+}
+
+figure[data-rehype-pretty-code-figure] {
+  margin: 1.5rem 0;
+  position: relative;
+  line-height: 1.6rem;
+
+  & > [data-rehype-pretty-code-title] {
+    font-family: var(--codeFont);
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--surface-elevated);
+    width: fit-content;
+    border-radius: var(--radius-md);
+    margin-bottom: -0.5rem;
+    color: var(--darkgray);
+    background: var(--surface);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// =============================================================================
+// G. Blockquotes — Warm Gradient Cards
+// =============================================================================
+
+blockquote {
+  margin: 1.5rem 0;
+  border-left: none;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-elevated) 100%);
+  padding: 1.25rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--accent-cool), var(--accent-warm));
+    border-radius: 2px;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  p {
+    margin: 0;
+    color: var(--darkgray);
+  }
+
+  p + p {
+    margin-top: 0.75rem;
+  }
+}
+
+// =============================================================================
+// H. Images — Outline + Rounded + Subtle Hover
+// =============================================================================
+
+img {
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  margin: 1rem 0;
+  content-visibility: auto;
+  outline: 1px solid rgba(255, 255, 255, 0.06);
+  outline-offset: -1px;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+p > img + em {
+  display: block;
+  transform: translateY(-0.75rem);
+  color: var(--gray);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+// =============================================================================
+// I. Tables
+// =============================================================================
+
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--lightgray);
+  box-shadow: var(--shadow-sm);
+  margin: 1.5rem 0;
+
+  & > table {
+    margin: 0;
+    padding: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+
+    th,
+    td {
+      min-width: 75px;
+      padding: 0.6rem 0.9rem;
+    }
+
+    & > * {
+      line-height: 1.8rem;
+    }
+  }
+}
+
+th {
+  text-align: left;
+  border-bottom: 2px solid var(--gray);
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+td {
+  border-bottom: 1px solid var(--lightgray);
+}
+
+tr {
+  transition: background-color var(--transition-fast);
+
+  &:hover {
+    background-color: var(--accent-cool-dim);
+  }
+
+  &:last-child td {
+    border-bottom: none;
+  }
+}
+
+// =============================================================================
+// J. Sidebars — Glassmorphic Sticky Panels
+// =============================================================================
+
+#quartz-body .sidebar {
+  gap: 1.5rem;
+  top: 0;
+  box-sizing: border-box;
+  padding: 2rem;
+  display: flex;
+  height: 100vh;
+  position: sticky;
+
+  &.left {
+    z-index: 1;
+    grid-area: grid-sidebar-left;
+    flex-direction: column;
+
+    @media all and ($desktop) {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px) saturate(1.2);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      border-radius: var(--radius-xl);
+      margin: 1rem 0.5rem 1rem 1rem;
+      height: calc(100vh - 2rem);
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow-md);
+    }
+
+    @media all and ($mobile) {
+      gap: 0;
+      align-items: center;
+      position: initial;
+      display: flex;
+      height: unset;
+      flex-direction: row;
+      padding: 0;
+      padding-top: 2rem;
+      background: transparent;
+      backdrop-filter: none;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+
+  &.right {
+    grid-area: grid-sidebar-right;
+    margin-right: 0;
+    flex-direction: column;
+
+    @media all and ($desktop) {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(16px) saturate(1.2);
+      -webkit-backdrop-filter: blur(16px) saturate(1.2);
+      border-radius: var(--radius-xl);
+      margin: 1rem 1rem 1rem 0.5rem;
+      height: calc(100vh - 2rem);
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: var(--shadow-md);
+    }
+
+    @media all and ($tablet) {
+      position: initial;
+      height: unset;
+      width: 100%;
+      flex-direction: row;
+      padding: 0;
+      background: transparent;
+      backdrop-filter: none;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      border-radius: 0;
+
+      & > * {
+        flex: 1;
+        max-height: 24rem;
+      }
+
+      & > .toc {
+        display: none;
+      }
+    }
+
+    @media all and ($mobile) {
+      margin-left: inherit;
+      margin-right: inherit;
+      background: transparent;
+      backdrop-filter: none;
+      border: none;
+      box-shadow: none;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+}
+
+// =============================================================================
+// K. Explorer — Soft Navigation Tree
+// =============================================================================
+
+.explorer {
+  ul {
+    padding-left: 0.5rem;
+    list-style: none;
+  }
+
+  li {
+    border-radius: var(--radius-sm);
+    padding: 0.35rem 0.5rem;
+    transition: background-color var(--transition-fast);
+    margin: 0.1rem 0;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background: var(--highlight);
+    }
+
+    a {
+      color: var(--darkgray);
+      font-weight: 400;
+      font-size: 0.95rem;
+      display: block;
+      width: 100%;
+      padding: 0.2rem 0;
+
+      &:hover {
+        color: var(--accent-cool);
+      }
+    }
+  }
+
+  button {
+    color: var(--gray);
+    transition: color var(--transition-fast);
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: var(--accent-cool);
+    }
+  }
+}
+
+// =============================================================================
+// L. Table of Contents — Floating Pill
+// =============================================================================
+
+.toc {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  .toc-title {
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0.3rem 0;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+
+    a {
+      display: block;
+      padding: 0.35rem 0.6rem;
+      color: var(--gray);
+      font-size: 0.88rem;
+      border-radius: var(--radius-sm);
+      transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast);
+
+      &:hover {
+        background: var(--accent-cool-dim);
+        color: var(--accent-cool);
+      }
+    }
+
+    &.active a {
+      background: var(--highlight);
+      color: var(--accent-cool);
+      font-weight: 500;
+    }
+  }
+}
+
+// =============================================================================
+// M. Search — Modern Spotlight Style
+// =============================================================================
+
+.search {
+  position: relative;
+
+  input[type="text"] {
+    background: var(--surface);
+    border: 1px solid var(--lightgray);
+    border-radius: var(--radius-pill);
+    padding: 0.65rem 1.25rem;
+    color: var(--darkgray);
+    font-size: 0.95rem;
+    transition:
+      border-color var(--transition-base),
+      box-shadow var(--transition-base),
+      background-color var(--transition-base);
+    width: 100%;
+    font-family: var(--bodyFont);
+
+    &::placeholder {
+      color: var(--gray);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-cool);
+      box-shadow: 0 0 0 3px var(--glow-blue), var(--shadow-md);
+      background: var(--surface-elevated);
+    }
+  }
+}
+
+// Search results panel
+.search-results {
+  background: var(--surface);
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  margin-top: 0.5rem;
+
+  .result-card {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    transition:
+      background-color var(--transition-fast),
+      transform var(--transition-fast);
+    margin: 0.25rem;
+    cursor: pointer;
+    min-height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover,
+    &:focus {
+      background: var(--accent-cool-dim);
+      transform: translateX(4px);
+      outline: none;
+    }
+
+    .result-title {
+      color: var(--accent-cool);
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .result-desc {
+      color: var(--gray);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+// =============================================================================
+// N. Backlinks — Warm Related Notes Cards
+// =============================================================================
+
+.backlinks {
+  margin-top: 3rem;
+
+  h3 {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-wrap: balance;
+
+    &::before {
+      content: "←";
+      color: var(--accent-warm);
+      font-size: 1.2rem;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    background: var(--surface);
+    border: 1px solid var(--lightgray);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    transition:
+      border-color var(--transition-base),
+      box-shadow var(--transition-base),
+      transform var(--transition-base);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cool), var(--accent-warm));
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
+    &:hover {
+      border-color: var(--accent-cool);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-3px);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    a {
+      color: var(--darkgray);
+      font-weight: 500;
+      display: block;
+      font-size: 0.95rem;
+
+      &:hover {
+        color: var(--accent-cool);
+      }
+    }
+  }
+}
+
+// =============================================================================
+// O. Page Header & Article
+// =============================================================================
+
+.page-header {
+  grid-area: grid-header;
+  margin: $topSpacing 0 0 0;
+
+  @media all and ($mobile) {
+    margin-top: 0;
+    padding: 0;
+  }
+}
+
+article {
+  grid-area: grid-center;
+  animation: fadeInUp 0.6s var(--ease-out-expo) backwards;
+
+  & > h1 {
+    font-size: 2rem;
+  }
+
+  & li:has(> input[type="checkbox"]) {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  & li:has(> input[type="checkbox"]:checked) {
+    text-decoration: line-through;
+    text-decoration-color: var(--gray);
+    color: var(--gray);
+  }
+
+  & li > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+// =============================================================================
+// P. Checkboxes — Styled
+// =============================================================================
+
+input[type="checkbox"] {
+  transform: translateY(2px);
+  color: var(--secondary);
+  border: 2px solid var(--lightgray);
+  border-radius: var(--radius-sm);
+  background-color: var(--surface);
+  position: relative;
+  margin-inline-end: 0.2rem;
+  margin-inline-start: -1.4rem;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+
+  &:hover {
+    border-color: var(--accent-cool);
+  }
+
+  &:checked {
+    border-color: var(--accent-cool);
+    background-color: var(--accent-cool);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 1px;
+      width: 5px;
+      height: 10px;
+      display: block;
+      border: solid var(--light);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+// =============================================================================
+// Q. Footnotes
+// =============================================================================
+
+.footnotes {
+  margin-top: 2rem;
+  border-top: 1px solid var(--lightgray);
+  padding-top: 1.5rem;
+
+  p {
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+}
+
+// =============================================================================
+// R. Horizontal Rule
+// =============================================================================
+
+hr {
+  width: 100%;
+  margin: 2.5rem auto;
+  height: 1px;
+  border: none;
+  background: linear-gradient(90deg, transparent, var(--lightgray), transparent);
+}
+
+// =============================================================================
+// S. Navigation Progress Bar
+// =============================================================================
+
+.navigation-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-cool), var(--accent-warm));
+  box-shadow: 0 0 8px var(--accent-cool);
+  transition: width 0.2s ease;
+  z-index: 9999;
+  will-change: transform, opacity;
+}
+
+// =============================================================================
+// T. Dark Mode Toggle — Glow Effect
+// =============================================================================
+
+.darkmode-toggle {
+  border-radius: var(--radius-pill);
+  padding: 0.5rem;
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  cursor: pointer;
+  min-width: 40px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: var(--highlight);
+    box-shadow: var(--shadow-glow);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+// =============================================================================
+// U. Page Title
+// =============================================================================
+
+.page-title {
+  font-family: var(--headerFont);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+
+  a {
+    color: var(--dark);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--accent-cool);
+    }
+  }
+}
+
+// =============================================================================
+// V. Content Meta — Warm Badges
+// =============================================================================
+
+.content-meta {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .tag-link {
+    background: var(--surface);
+    border: 1px solid var(--lightgray);
+    border-radius: var(--radius-pill);
+    padding: 0.2rem 0.7rem;
+    font-size: 0.8rem;
+    color: var(--darkgray);
+    transition:
+      border-color var(--transition-fast),
+      background-color var(--transition-fast),
+      color var(--transition-fast);
+
+    &:hover {
+      border-color: var(--accent-cool);
+      background: var(--highlight);
+      color: var(--accent-cool);
+    }
+  }
+}
+
+// =============================================================================
+// W. Footer
+// =============================================================================
+
+footer {
+  grid-area: grid-footer;
+  margin-top: 4rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--lightgray);
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-left: 0;
+
+  a {
+    color: var(--gray);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: var(--accent-cool);
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+
+    a {
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--radius-pill);
+      background: var(--surface);
+      border: 1px solid var(--lightgray);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--darkgray);
+      transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: var(--highlight);
+        border-color: var(--accent-cool);
+        color: var(--accent-cool);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glow);
+      }
+
+      &:active {
+        transform: scale(0.96);
+      }
+    }
+  }
+}
+
+// =============================================================================
+// X. Popover — Enhanced Glow
+// =============================================================================
+
+.popover {
+  z-index: 999;
+  position: fixed;
+  overflow: visible;
+  will-change: transform;
+
+  & > .popover-inner {
+    width: 30rem;
+    max-height: 20rem;
+    border: 1px solid var(--lightgray);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    overscroll-behavior: contain;
+  }
+
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+
+  @media all and ($mobile) {
+    display: none !important;
+  }
+}
+
+.active-popover,
+.popover:hover {
+  animation: dropin 0.3s ease;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+
+// =============================================================================
+// Y. Recent Notes — Card Grid
+// =============================================================================
+
+.recent-notes {
+  margin-top: 3rem;
+
+  h3 {
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    text-wrap: balance;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    background: var(--surface);
+    border: 1px solid var(--lightgray);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    transition:
+      border-color var(--transition-base),
+      box-shadow var(--transition-base),
+      transform var(--transition-base);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cool), var(--accent-warm));
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
+    &:hover {
+      border-color: var(--accent-cool);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-3px);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    a {
+      color: var(--darkgray);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.5rem;
+
+      &:hover {
+        color: var(--accent-cool);
+      }
+    }
+
+    .note-date {
+      color: var(--gray);
+      font-size: 0.85rem;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+}
+
+// =============================================================================
+// Z. Spacer & Utility
+// =============================================================================
+
+.spacer {
+  flex: 2 1 auto;
+}
+
+.flex-component {
+  display: flex;
+}
+
+.desktop-only {
+  display: contents;
+
+  &.flex-component {
+    display: flex;
+  }
+
+  @media all and ($mobile) {
+    &.flex-component {
+      display: none;
+    }
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+
+  &.flex-component {
+    display: none;
+  }
+
+  @media all and ($mobile) {
+    &.flex-component {
+      display: flex;
+    }
+    display: contents;
+  }
+}
+
+// =============================================================================
+// AA. Text Highlight
+// =============================================================================
+
+.text-highlight {
+  background-color: var(--textHighlight);
+  padding: 0 0.2rem;
+  border-radius: var(--radius-sm);
+}
+
+// =============================================================================
+// AB. Page Layout Tweaks
+// =============================================================================
+
+.page {
+  max-width: calc(#{map.get($breakpoints, desktop)} + 300px);
+  margin: 0 auto;
+}
+
+.center,
+footer {
+  max-width: 100%;
+  min-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media all and ($tablet) {
+    margin-right: 0;
+  }
+
+  @media all and ($mobile) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+// =============================================================================
+// AC. Animation Keyframes
+// =============================================================================
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// =============================================================================
+// AD. Reduced Motion Support
+// =============================================================================
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  article {
+    animation: none;
+  }
+
+  .backlinks li:hover,
+  .recent-notes li:hover,
+  blockquote:hover {
+    transform: none;
+  }
+}
+
+// =============================================================================
+// AE. Mobile & Tablet Responsive Overrides
+// =============================================================================
+
+@media all and ($mobile) {
+  article {
+    padding: 0 1rem;
+    animation: fadeIn 0.3s ease;
+
+    > h1 {
+      font-size: 1.75rem;
+    }
+
+    > h2 {
+      font-size: 1.3rem;
+    }
+
+    > h3 {
+      font-size: 1.1rem;
+    }
+
+    p,
+    li {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+
+  img {
+    border-radius: var(--radius-md);
+  }
+
+  blockquote {
+    border-radius: var(--radius-md);
+    padding: 1rem;
+  }
+
+  pre {
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+  }
+
+  .backlinks ul,
+  .recent-notes ul {
+    grid-template-columns: 1fr;
+  }
+
+  .search input[type="text"] {
+    border-radius: var(--radius-lg);
+  }
+
+  .content-meta {
+    gap: 0.5rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+
+    a {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+}
+
+@media all and ($tablet) {
+  .sidebar.right {
+    position: initial;
+    height: unset;
+    width: 100%;
+    flex-direction: row;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+
+    & > * {
+      flex: 1;
+      max-height: 24rem;
+    }
+
+    & > .toc {
+      display: none;
+    }
+  }
+
+  article {
+    padding: 0 0.5rem;
+  }
+}
