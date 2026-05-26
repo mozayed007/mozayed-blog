@@ -1,6 +1,6 @@
 ---
 title: Parallelization (Lecture 12b)
-draft: false
+draft: true
 tags:
   - NLP
   - LLM

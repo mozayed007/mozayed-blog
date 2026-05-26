@@ -1,6 +1,6 @@
 ---
 title: Multimodal Models (Lecture 12a)
-draft: false
+draft: true
 tags:
   - NLP
   - LLM
