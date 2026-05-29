@@ -23,7 +23,6 @@ title: About Me
 - **Novel Representation & Memory Learning** — Exploring vector stores, knowledge graphs, hybrid approaches, and stateful live memory systems (LiveMem / THEN).
 - **Interpretability, Alignment & Safety** — Probing decision paths, emergent behaviors, and guardrails (long-term Anthropic-style inquiry).
 - **AI ↔ Cybersecurity Integration** — Securing ML pipelines (privacy, robustness) and embedding AI into security tooling.
-- **3D Avatar & VRoid-Based Services** — Automating avatar generation with real-time facial motion capture (VSeeFace/VMagicMirror).
 - **Computational Neuroscience & Brain-Signal ML** — EEG/fMRI-driven models for real-time detection and medical applications.
 
 ---
